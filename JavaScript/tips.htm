@@ -1,0 +1,44 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Tips</title>
+</head>
+
+<body>
+
+<p align="left">Tips:</p>
+<p align="left">&nbsp;</p>
+<p align="left">Multiple scripts trying to run from single event:</p>
+<p align="left">To execute when the page is finished loading a script itself can contain a window.onload=dothat() or the body tag can contain the event and
+script &lt;body onload=&quot;dothis()&gt; </p>
+<p align="left">Essentially, what you want is to end up with only ONE delta for both scripts, with that delta calling the two scripts. Let's list some possible
+scenarios now, and their resolutions:<br>
+<br>
+<strong><u>EXAMPLE #1:</u></strong><br>
+<small><font face="Courier">SCRIPT 1: &lt;body onload=&quot;dothis()&quot;&gt;<br>
+SCRIPT 2: &lt;body onload=&quot;dothat()&quot;&gt;<br>
+RESOLUTION: &lt;body onload=&quot;dothis();dothat()&quot;&gt;</font></small><br>
+<br>
+<strong><u>EXAMPLE #2:</u></strong><br>
+<small><font face="Courier">SCRIPT 1: &lt;body onload=&quot;dothis()&quot;&gt;<br>
+SCRIPT 2: window.onload=dothat()<br>
+RESOLUTION: &lt;body onload=&quot;dothis();dothat()&quot;&gt;</font></small><br>
+<br>
+<strong><u>EXAMPLE #3:</u></strong><br>
+<small><font face="Courier">SCRIPT 1: window.onload=dothis<br>
+SCRIPT 2: window.onload=dothat<br>
+RESOLUTION: &lt;body onload=&quot;dothis();dothat()&quot;&gt;</font></small><br>
+<br>
+As you can see, regardless of whether the two scripts contain &quot;delta&quot; or &quot;beta&quot;, the resolution is the same- remove BOTH lines, and call the
+scripts directly within the &lt;body&gt; tag, each separated by a semicolon. If you wish to combine three scripts, the procedure is the exact same.<br>
+<br>
+By using the above technique, both scripts are called and executed, as opposed to just one- or neither. In other words, conflict avoided! Check out <a href="http://www.wsabstract.com/javatutors/eventaction4.shtml">http://www.wsabstract.com/javatutors/eventaction4.shtml</a>
+for some additional information on resolving script conflicts. Good luck!</p>
+&nbsp;
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Go ahead right click anywhere on the document</title>
+<style>#contextMenu { position: absolute; visibility: hidden; width: 120px; background-color: 
+               lightgrey; layer-background-color: lightgrey; 
+               border: 2px outset white }
+.A:menu      { color: black; text-decoration: none; cursor: default; width: 100% }
+.A:menuon    { color: white; text-decoration: none; background-color: darkblue; cursor: 
+               default; width: 100% }
+</style>
+
+<SCRIPT> 
+var menu; 
+function showMenu (evt) { 
+  if (document.all) { 
+    document.all.contextMenu.style.pixelLeft = event.clientX; 
+    document.all.contextMenu.style.pixelTop = event.clientY; 
+    document.all.contextMenu.style.visibility = 'visible'; 
+    return false; 
+  } 
+  else if (document.layers) { 
+    if (evt.which == 3) { 
+      document.contextMenu.left = evt.x; 
+      document.contextMenu.top = evt.y; 
+      document.contextMenu.onmouseout = 
+        function (evt) { this.visibility = 'hide'; }; 
+      document.contextMenu.visibility = 'show'; 
+      return false; 
+    } 
+  } 
+  return true; 
+} 
+if (document.all) 
+  document.oncontextmenu =showMenu; 
+if (document.layers) { 
+  document.captureEvents(Event.MOUSEDOWN); 
+  document.onmousedown = showMenu; 
+} 
+</SCRIPT> 
+
+</head>
+
+<body>
+
+Go ahead right click anywhere on the document
+<div id="contextMenu" onmouseout="menu = this; this.tid = setTimeout 
+('menu.style.visibility = \'hidden\'', 20);" onmouseover="clearTimeout(this.tid);">
+  <a href="http://nirvana.media3.net" ; class="menu" onmouseover="this.className = 'menuOn'" onmouseout="this.className = 'menu';">Visit Nirvana</a><br>
+  <a href="http://oneproject.net" ; class="menu" onmouseover="this.className = 'menuOn'" onmouseout="this.className = 'menu';">Visit One Project</a>
+</div>
+
+</body>
+
+</html>

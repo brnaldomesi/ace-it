@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>JSRS Javascript Remote Scripting</title>
+  <script language="javascript" src="jsrsClient.js"></script>
+  <script language="javascript">
+    function test(thing){
+      // pass multiple parms as array
+      jsrsExecute("test_rs.asp", myCallback, "test" + thing, Array("Test","String"));
+    }
+    function envVar(){
+      // pass single parm as string
+      jsrsExecute("test_rs.asp", myCallback, "envVar", "ALL_HTTP");
+    }
+    function myCallback( returnstring ){
+      alert(returnstring);
+    } 
+  </script>
+</head>
+<body onHelp="return jsrsDebugInfo();">
+  <font face="arial">
+  <p>Javascript Remote Scripting Example</p>
+  <p><small>(in IE, you can press F1 to see jsrs debugging info)</small></p>
+  <form onsubmit="test('JS');return false;">
+    <input type="submit" value="testJS">
+  </form>
+  <form onsubmit="test('VB');return false;">
+    <input type="submit" value="testVB">
+  </form>
+  <form onsubmit="envVar();return false;">
+    <input type="submit" value="envVar">
+  </form>
+ 
+  <a href=jsrs.zip>Download</a> the zipped files for JSRS<br>
+  <p>
+    It's nice to see there have been quite a few downloads.  
+    I'd be happy to hear about your experiences with JSRS, good and bad, 
+   and to hear how you are using it in real-world applications.
+  </p>
+  <p>
+    Just drop me an <a href="mailto:jsrs@megahuge.com">email</a> with any
+    comments.
+  </p>
+  <hr>
+  Immediate Code Execution Form:<br>
+  <form onsubmit="eval(this.txtcode.value); return false;">
+    <textarea name="txtcode" rows="5" cols="50">alert(jsrsContextPoolSize);</textarea>
+    <input type=submit value="evaluate code">  
+  </form>
+
+  </font>
+</body>
+</html>

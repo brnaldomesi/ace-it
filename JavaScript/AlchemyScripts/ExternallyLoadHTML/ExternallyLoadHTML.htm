@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0048)http://dhtmlnirvana.com/alchemy/externalload.htm -->
+<HTML><HEAD><TITLE>Alchemy: DHTML Scripts</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<SCRIPT language=JavaScript>
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</SCRIPT>
+
+<STYLE>BODY {
+	SCROLLBAR-FACE-COLOR: #666666; SCROLLBAR-HIGHLIGHT-COLOR: #999999; SCROLLBAR-SHADOW-COLOR: black; SCROLLBAR-ARROW-COLOR: red; SCROLLBAR-BASE-COLOR: black; scrollbar-3d-light-color: #999999; scrollbar-dark-shadow-color: #333333
+}
+SUP {
+	COLOR: #800000
+}
+.code {
+	FONT-SIZE: 14px; COLOR: #ffffcc; FONT-STYLE: normal; FONT-FAMILY: "Times New Roman", Times, serif
+}
+</STYLE>
+
+<META content="MSHTML 5.50.4611.1300" name=GENERATOR></HEAD>
+<BODY text=#ffffff vLink=#ffffff aLink=#ff9999 link=#ffffff bgColor=#996666 
+onload="">
+<DIV id=graybarLayer 
+style="BORDER-RIGHT: #000000 1px; BORDER-TOP: #000000 1px; Z-INDEX: 1; LEFT: 0px; BORDER-LEFT: #000000 1px; WIDTH: 1024px; BORDER-BOTTOM: #000000 1px; POSITION: absolute; TOP: 0px; HEIGHT: 60px; BACKGROUND-COLOR: #646056; layer-background-color: #646056">Externally 
+Loading HTML </DIV>
+<DIV id=topbarLayer 
+style="Z-INDEX: 2; LEFT: 0px; WIDTH: 200px; POSITION: absolute; TOP: 50px; HEIGHT: 53px"><IMG 
+height=54 src="ExternallyLoadHTML_files/background_r2_c1.gif" width=1024></DIV>
+<DIV id=codeLayer 
+style="Z-INDEX: 12; LEFT: 100px; WIDTH: 400px; POSITION: absolute; TOP: 120px; HEIGHT: 50px">
+<P>One of the most useful DHTML techniques is the ability to load external html 
+content into a CSS Layer via an iframe buffer. This technique has many 
+advantages over loading content into an Iframe. In utilizing this technique, you 
+retain all the advantages of using a layer, including positioning, z-index, 
+visibility and so on. On top of that, you get the added benefit that the layer 
+is transparent, so content can easily being superimposed over backgrounds, 
+images etc... </P>
+<P>So lets look at a script that Jeff Rouyer and myself originally developed. 
+Yeah we beat the mozilla team to the solution!! </P>
+<P>There are two important parts, one id the page to be loaded into the main 
+interface and the other is the scripts on the main interface. Lets look at the 
+external html page that is going to be loaded into the main interface first. 
+</P>
+<P>&lt;html&gt;<BR>&lt;head&gt;<BR>&lt;title&gt;Untitled 
+Document&lt;/title&gt;</P>
+<P class=code>&lt;/head&gt;</P>
+<P class=code>&lt;body id="theBody" 
+onload="parent.showPage('contentLayer')"&gt;<BR>slapme 
+twice!!!!!!!!!!!!!!!!!!!!!!!! <BR>&lt;/body&gt;<BR>&lt;/html&gt;</P>
+<P>The page to be externally loaded is a normal html document, thus any content 
+can be put in between the <SPAN class=code>&lt;body&gt; &lt;/body&gt;</SPAN> 
+tags. This includes images, applets, flash movies and so forth. What's important 
+from an external loading technique is to firstly provide an <SPAN 
+class=code>id</SPAN> for the body of the document. In this instance, we use 
+<SPAN class=code>body id="theBody"</SPAN> . The other important facet is to 
+provide an onload event handler to overcome a loading bug with NS6. Here, we use 
+<SPAN class=code>onload="parent.showPage('contentLayer')" </SPAN>where we refer 
+back to main page function <SPAN class=code>showPage()</SPAN> by using the <SPAN 
+class=code>parent</SPAN> reference and then defining the layer that the page is 
+going be loaded into by using the <SPAN class=code>id</SPAN> argument that is 
+defined in <SPAN class=code>showPage()</SPAN> script. In this case <SPAN 
+class=code>contentLayer</SPAN>. </P>
+<P>The main interface script is as follows:</P>
+<P class=code>&lt;html&gt;<BR>&lt;head&gt;</P>
+<P class=code>&lt;script language="JavaScript"&gt;<BR>var nn4= 
+(document.layers);<BR>var nn6= (document.getElementById &amp;&amp; 
+!document.all);<BR>var ie4= (document.all &amp;&amp; 
+!document.getElementById);<BR>var ie5= (document.all &amp;&amp; 
+document.getElementById);</P>
+<P class=code>function loadPage(id,nestref,url) {<BR>if (nn4) {<BR>var lyr = 
+(nestref)? eval('document.'+nestref+'.document.'+id) : 
+document.layers[id]<BR>lyr.load(url,lyr.clip.width)<BR>}</P>
+<P class=code>else if(ie4) parent.contentFRM.location = url;</P>
+<P class=code>else if(ie5 || nn6) document.getElementById('contentFRM').src = 
+url;<BR>}</P>
+<P class=code>function showPage(id) {<BR>if (ie4) 
+{<BR>document.all[id].innerHTML = 
+parent.contentFRM.document.body.innerHTML;<BR>}</P>
+<P class=code>else if(nn6 || ie5) { <BR>document.getElementById(id).innerHTML = 
+window.frames['contentFRM'].document.getElementById('theBody').innerHTML;<BR>}<BR>}<BR>&lt;/script&gt;</P>
+<P class=code>&lt;title&gt;External Loader&lt;/title&gt;&lt;/head&gt;</P>
+<P class=code>&lt;body&gt;</P>
+<P class=code>&lt;a 
+href="javascript:loadPage('contentLayer',null,'load1.htm')"&gt;load page 
+1&lt;/a&gt;</P>
+<P class=code>&lt;br&gt;&lt;Br&gt;</P>
+<P class=code>&lt;a 
+href="javascript:loadPage('contentLayer',null,'load2.htm')"&gt;load page 
+2&lt;/a&gt;</P>
+<P class=code>&lt;Br&gt;&lt;Br&gt;</P>
+<P class=code><BR>&lt;iframe name="contentFRM" id="contentFRM" width="0" 
+height="0" frameborder="0"&gt;<BR>&lt;/iframe&gt;</P>
+<P class=code>&lt;div id="contentLayer" style="position:absolute; width:345px; 
+height:115px; z-index:1; left: 186px; top: 304px"&gt;&lt;/div&gt;</P>
+<P class=code><BR>&lt;/body&gt;<BR>&lt;/html&gt;<BR></P>
+<P>Lets take a look at what's included in the body section before explaining the 
+script. The first thing to do is to create a CSS Layer as demonstrated below: 
+</P>
+<P class=code>&lt;div id="contentLayer" style="position:absolute; width:345px; 
+height:115px; z-index:1; left: 186px; top: 304px"&gt;&lt;/div&gt;</P>
+<P>Then we need to create a hidden Iframe to act as a buffer as shown below:</P>
+<P class=code>&lt;iframe name="contentFRM" id="contentFRM" width="0" height="0" 
+frameborder="0"&gt;<BR>&lt;/iframe&gt;</P>
+<P>It is important to note that both a name and id attribute must be provided 
+for the iframe, you guessed it, another Netscape 6 bug!. In this example we use 
+<SPAN class=code>contentFRM</SPAN> . Lets move on to the main scripts: </P>
+<P>First we create a simplified browser sniffer by using some variables:</P>
+<P class=code>var nn4= (document.layers);<BR>var nn6= (document.getElementById 
+&amp;&amp; !document.all);<BR>var ie4= (document.all &amp;&amp; 
+!document.getElementById);<BR>var ie5= (document.all &amp;&amp; 
+document.getElementById);</P>
+<P>&nbsp;</P>
+<P>Here we sniff for Netscape 4 by using the variable nn4, for Netscape 6 by 
+using the variable nn6, for Internet Explorer 4 by using the variable ie4 and 
+finally the variable ie5 for Internet Explorer 5 and above. <BR></P>
+<P>The function loadPage() is used to load the content into an Iframe for 
+Netscape 6 and Internet Explorer versions:</P>
+<P class=code>function loadPage(id,nestref,url) {<BR>if (nn4) {<BR>var lyr = 
+(nestref)? eval('document.'+nestref+Document+id) : 
+document.layers[id]<BR>lyr.load(url,lyr.clip.width)<BR>}</P>
+<P class=code>else if(ie4) parent.contentFRM.location = url;</P>
+<P class=code>else if(ie5 || nn6) document.getElementById('contentFRM').src = 
+url;<BR>}</P>
+<P>Three arguments are used in the function id, nestref, and url . The id is 
+utilized to designate the iframe in the case of Internet Explorer 4 &amp; 5+ and 
+Netscape 6, while for Netscape 4 it specifies the id of the layer. The nestref 
+argument allows for nested layers in Netscape 4 and the url is used to designate 
+where the content will be loaded. </P>
+<P>The script starts by specifying a Netscape 4 condition and then creates a 
+variable named <SPAN class=code>lyr</SPAN> which uses a specific reference to 
+the layer to overcome nested layers problems in the 4.0 Netscape series 
+browsers. Netscape 4 has the ability to directly load content into a layer by 
+using the load command as shown below:</P>
+<P class=code>lyr.load(url,lyr.clip.width)</P>
+<P>The clipwidth command serves as placeholder for NS4 in case clipping of the 
+layer is required as may be the case when using nested layers. </P>
+<P>We then set a condition for IE4 and use the following to specify the location 
+of the url</P>
+<P class=code>else if(ie4) parent.contentFRM.location = url;</P>
+<P>For Internet Explorer 5 and Netscape 6 there is no need to specify the parent 
+location, rather we just directly access the id of the iframe via the use of 
+document.getElementById() as shown below:</P>
+<P>else if(ie5 || nn6) document.getElementById('contentFRM').src = url;<BR>}</P>
+<P>Now that the external page has been loaded into the iframe we need to shift 
+it across to a layer. To accomplish this we use the following function:</P>
+<P class=code>function showPage(id) {<BR>if (ie4) 
+{<BR>document.all[id].innerHTML = 
+parent.contentFRM.document.body.innerHTML;<BR>}</P>
+<P class=code>else if(nn6 || ie5) { <BR>document.getElementById(id).innerHTML = 
+window.frames['contentFRM'].document.getElementById('theBody').innerHTML;<BR>}<BR>}<BR>&lt;/script&gt;</P>
+<P>Remember that there is no need to shift the content into a layer for Netscape 
+4 because its directly loaded into that layer. Consequently, we can focus our 
+attention on using innerHTML, which Netscape 6 and Internet Explorer versions 
+accept. Unfortunately we need a different reference for Internet Explorer 4 than 
+for Internet Explorer 5 and Netscape 6 so we need to branch the code to cater 
+for these differences. </P>
+<P class=code>if (ie4) {<BR>document.all[id].innerHTML = 
+parent.contentFRM.document.body.innerHTML;<BR>}</P>
+<P>Here, we specify the proprietary document.all specification for IE4, then use 
+the id argument to identify which layer the external content is going to be 
+loaded into and then tell the browser to use innerHTML. The innerHTML specifies 
+that the content is in the parent document that contains the iframe contentFRM, 
+which contains the content in the document body of the iframe, then lets grab 
+the content with innerHTML. </P>
+<P>&nbsp;</P>
+<P>The same logic applies to the NS6, IE5 condition except for a couple of key 
+differences. We use document.getElementById(id).innerHTML = to instruct the 
+browser to write the following; window.frames to specify the name of the frame 
+in this case contentFRM, then get the id of the body of the external content by 
+using document.getElementById('theBody') and finally use innerHTML. </P>
+<P>&nbsp;</P>
+<P>The last think to note is how the event handlers function;</P>
+<P class=code>&lt;a 
+href="javascript:loadPage('contentLayer',null,'load1.htm')"&gt;load page 
+1&lt;/a&gt;</P>
+<P>To preserve compatibility with the Macintosh platform we use 
+javascript:loadPage() we then use our arguments to specify the id of the layer, 
+we include a null reference for nested layers and finally specify which page to 
+load into the layer. </P>
+<P>That's it have fun with this! </P>
+<P>&nbsp;</P>
+<P><A href="http://www.dhtmlnirvana.com/alchemy/">Return to the Alchemy 
+Index</A> </P></DIV></BODY></HTML>

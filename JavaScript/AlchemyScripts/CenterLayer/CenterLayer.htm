@@ -1,0 +1,352 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://dhtmlnirvana.com/alchemy/centerlyr.htm -->
+<HTML><HEAD><TITLE>Alchemy: DHTML Scripts</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<SCRIPT language=JavaScript>
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</SCRIPT>
+
+<STYLE>BODY {
+	SCROLLBAR-FACE-COLOR: #666666; SCROLLBAR-HIGHLIGHT-COLOR: #999999; SCROLLBAR-SHADOW-COLOR: black; SCROLLBAR-ARROW-COLOR: red; SCROLLBAR-BASE-COLOR: black; scrollbar-3d-light-color: #999999; scrollbar-dark-shadow-color: #333333
+}
+SUP {
+	COLOR: #800000
+}
+.code {
+	FONT-SIZE: 14px; COLOR: #ffffcc; FONT-STYLE: normal; FONT-FAMILY: "Times New Roman", Times, serif
+}
+</STYLE>
+
+<META content="MSHTML 5.50.4611.1300" name=GENERATOR></HEAD>
+<BODY text=#ffffff vLink=#ffffff aLink=#ff9999 link=#ffffff bgColor=#996666 
+onload="">
+<DIV id=graybarLayer 
+style="BORDER-RIGHT: #000000 1px; BORDER-TOP: #000000 1px; Z-INDEX: 1; LEFT: 0px; BORDER-LEFT: #000000 1px; WIDTH: 1024px; BORDER-BOTTOM: #000000 1px; POSITION: absolute; TOP: 0px; HEIGHT: 60px; BACKGROUND-COLOR: #646056; layer-background-color: #646056">Center 
+Layer by Resolution</DIV>
+<DIV id=topbarLayer 
+style="Z-INDEX: 2; LEFT: 0px; WIDTH: 200px; POSITION: absolute; TOP: 50px; HEIGHT: 53px"><IMG 
+height=54 src="CenterLayer_files/background_r2_c1.gif" width=1024></DIV>
+<DIV id=codeLayer 
+style="Z-INDEX: 12; LEFT: 10px; WIDTH: 700px; POSITION: absolute; TOP: 120px; HEIGHT: 50px">One 
+of the keys to dynamically altering your interface to accommodate to a users 
+screen resolution is the ability to position layers by screen height and screen 
+width. To illustrate this lets look at how we would center a layer across 
+varying screen resolutions.<BR><BR>First off out Browser Sniffer:<BR><PRE class=code>function Is() {
+var agent = navigator.userAgent.toLowerCase();
+this.major = parseInt(navigator.appVersion);
+this.minor = parseFloat(navigator.appVersion);
+this.ns = ((agent.indexOf('mozilla') != -1) &amp;&amp; 
+(agent.indexOf('spoofer') == -1) &amp;&amp;
+(agent.indexOf('compatible') == -1) &amp;&amp;
+(agent.indexOf('opera') == -1) &amp;&amp;
+(agent.indexOf('webtv') == -1));
+this.ns2 = (this.ns &amp;&amp; (this.major == 2));
+this.ns3 = (this.ns &amp;&amp; (this.major == 3));
+this.ns4 = (this.ns &amp;&amp; (this.major == 4));
+this.ns6 = (this.ns &amp;&amp; (this.major &gt;= 5));
+this.ie = (agent.indexOf("msie") != -1);
+this.ie3 = (this.ie &amp;&amp; (this.major &lt; 4));
+this.ie4 = (this.ie &amp;&amp; (this.major &gt;= 4));
+this.ie5 = (this.ie &amp;&amp; (this.major == 4) &amp;&amp;
+(agent.indexOf("msie 5.0") != -1));
+this.ieX = (this.ie &amp;&amp; !this.ie3 &amp;&amp; !this.ie4);
+}
+
+var is = new Is();
+</PRE>The purpose of this portion of the script is to be able to detect which 
+browser the client is using. In reality, we could use direct object detection 
+here, instead of browser detection, but in many instances, object detection is 
+not strict enough. For example, some Netscape 4 browser versions allow you to 
+take over the whole screen, while others will display the Microsoft Windows 
+status bar by default.<BR><BR>The browser sniffer is composed of a number of 
+variables that converts the user agent string into an object for us to use later 
+in the script. What may be confusing for some is the term object. So lets make a 
+differentiation between direct objects and created objects. The browser sniffer 
+consists of developer created objects. In other words, we create the objects. As 
+long as the variable is associated with the correct user agent string, we wont 
+run into many problems.<BR><BR><BR>DOM:<BR><BR>Each browser though has its own 
+document object model (DOM). As developers, we can tap into the DOM of each 
+browser and directly create a condition based on the DOM of each browser. This 
+is what I term direct object detection, because we are not creating the object 
+detection routine, since it already exists. The following table outlines each 
+direct object detection method for DHTML capable browsers.<BR><BR>
+<TABLE cellSpacing=6 cellPadding=10 width="80%" border=1>
+  <TBODY>
+  <TR>
+    <TD>Internet Explorer 5 / Netscape 6</TD>
+    <TD>Internet Explorer 4 / Internet Explorer 5</TD>
+    <TD>Netscape 4</TD></TR>
+  <TR>
+    <TD>document.getElementById()</TD>
+    <TD>document.all</TD>
+    <TD>document.layers</TD></TR></TBODY></TABLE><BR><BR>Note: Internet Explorer 5 
+accepts both its proprietry document.all method and the W3C recommendation of 
+document.GetElementById.<BR><BR>If you are interested in going the direct 
+objection detection route then use the above as a guideline. For the purposes of 
+this demonstration, we are going to run with the created object detection 
+method.<BR><BR>From the browser sniffer script we need to use the 4 variables 
+that cover the major DHTML capable browsers: is.ns4, is.ns6, is.ie4, and is.ie5. 
+The easiest way to understand these variables is to think of them as eventually 
+taking the form of a question.<BR><BR><FONT class=code>if 
+(is.ie5||is.ns6){</FONT><BR>do the script here<BR><BR>Asks the question is this 
+either Internet Explorer 5 or Netscape 6. If the answer is yes, then run the 
+portion of the script specific to this question. If the answer is no, then go to 
+the next question and see if the answer is yes.<BR><BR><FONT class=code>} else 
+if(is.ie4) {</FONT><BR>do the script here<BR><BR>Asks the question is this 
+Internet Explorer 4. As before, if the answer to the question is yes then run 
+this portion of the script, if the answer is no then go to the next 
+question.<BR><BR><FONT class=code>} else if(is.ns4) {</FONT><BR>do the script 
+here<BR><BR><FONT class=code>} else if(is.ns3 || is.ns2|| is.ieX) {</FONT><BR>do 
+the script here.<BR><BR>Asks the question is this browser a non-DHTML capable 
+browser. If the answer is yes, then we would either pass an alert or redirect 
+the user to some page that caters for these browsers. We could also build in 
+other variables, which detect for Opera, WebTV etc and also redirect or pass an 
+alert. The trade of is that your detection routines and scripts tend to become 
+quite large. Coupled with the very small percentage of users, employing a 
+non-DHTML capable browser, then the effort at times hardly seems 
+worthwhile.<BR><BR>Object Constructors:<BR><BR>Having understood the basic 
+premise of detection routines and if/else statements, lets begin to build the 
+script. The method used here is commonly referred to as an object 
+constructor.<BR><BR>The first part of the script converts layers into JavaScript 
+objects that can be easily manipulated later on in the scripting routine.<BR><PRE>function layerObject(id,position,left,top,visibility) {
+if (is.ie5||is.ns6){
+this.obj = document.getElementById(id).style;
+this.obj.position = position;
+this.obj.left = left;
+this.obj.top = top;
+this.obj.visibility = visibility;
+return this.obj;
+
+} else if(is.ie4) {
+this.obj = document.all[id].style;
+this.obj.position = position;
+this.obj.left = left;
+this.obj.top = top;
+this.obj.visibility = visibility;
+return this.obj;
+
+} else if(is.ns4) {
+this.obj = document.layers[id];
+this.obj.position = position;
+this.obj.left = left;
+this.obj.top = top;
+this.obj.visibility = visibility;
+return this.obj;
+} 
+
+}
+</PRE><BR>Layer Attributes:<BR><BR>The next part of the script is dedicated to 
+creating attributes for the JavaScript object. A good way to think of this is to 
+conceptualise a CSS layer written in the body section of your 
+document:<BR><BR><FONT class=code>&lt;DIV ID="centerLayer" STYLE="position: 
+absolute; width:200px; height:24px; left: 0px; top: 0px; z-index: 6; visibility: 
+hidden;"&gt; &lt;/DIV&gt;</FONT><BR><BR>You will notice that in the div tag we 
+have an id attribute. Similarly, in our layer object we also assign an id 
+attribute. The reasoning behind this is that what we are attempting to achieve 
+is a JavaScript replication of the attributes of a 
+<DIV>tag. Following this course of logic, we then assign more CSS layer 
+attributes to the layerObject. We assign, position, top, left and visibility. 
+More attributes could be assigned as needed, for instance we could include 
+z-index, height and width and so on. The object constructor can become very 
+detailed and thus ideally open itself to a myriad of dynamic manipulations. But 
+for our purposes, lets stick with just a couple of assigned 
+attributes.<BR><BR>We then return the object with the statement <FONT 
+class=code>return this.obj;</FONT><BR><BR>In essence, the function of this 
+statement is to tell the browser to run this portion of the script.<BR><BR>This 
+same sequence is repeated for each condition, so that only the portion of the 
+script that meets the condition criteria is performed. It is important to note, 
+that thus far we have not really created anything. All we have done is prepared 
+our documents for the creation of new layer objects. Therefore, we now need to 
+focus our attention on creating new layer objects. This is achieved with the 
+layerSetup() script.<BR><BR><PRE class=code>function layerSetup() {
+centerLyr = new layerObject('centerLayer','absolute', available_width/2-100,available_height/2-12,'visible');
+}
+</PRE><BR>The first line defines the functions name. The second line does quite 
+a few things so lets pull it apart to better understand it. We create a new 
+variable centerLyr and then tell the browser that it will equal a new 
+layerObject(). The sole purpose of this section of the JavaScript statement is 
+to hook back into our layerObject() script so that we can then assign the 
+specific values needed for that particular layer. You can identify the attribute 
+value that belongs to layerObject() properties by looking at the following 
+table.<BR><BR>
+<TABLE cellSpacing=6 cellPadding=10 width="100%" border=1>
+  <TBODY>
+  <TR>
+    <TD>Function Name</TD>
+    <TD>ID Property</TD>
+    <TD>Position Property</TD>
+    <TD>Left Property</TD>
+    <TD>Top Property</TD>
+    <TD>Visibility Property</TD></TR>
+  <TR>
+    <TD>LayerObject</TD>
+    <TD>id</TD>
+    <TD>position</TD>
+    <TD>left</TD>
+    <TD>top</TD>
+    <TD>Visibility</TD></TR>
+  <TR>
+    <TD>LayerSetup</TD>
+    <TD>centerLayer</TD>
+    <TD>absolute</TD>
+    <TD>available_width/2-100</TD>
+    <TD>available_height/2-12 </TD>
+    <TD>visible</TD></TR></TBODY></TABLE><BR><BR>The upshot of this little piece of 
+scripting is that we end up with a new variable called centerLayer which has the 
+CSS attributes of positioning, left, top, and visibility assigned to it. From a 
+scripting perspective this is enormously usefull because if we so wished we can 
+then manipulate any of the css properties with a single call that is 
+cross-browser and backward compatible. For example if we wanted to toggle a 
+layers visibility backwards and forward we could write something akin to 
+this:<BR><BR><PRE class=code>function showLyr(){
+centerLyr.visibility='visible';
+}
+
+function hideLyr(){
+centerLyr.visibility='hidden';
+}
+</PRE><BR>But then this is another story.<BR><BR>Lets get back to positioning 
+our layers by a users screen resolution. You will note that instead of assigning 
+a numeric value to the left and top attributes of the new layer object, <FONT 
+class=code>available_width</FONT> and <FONT class=code>available_height</FONT> 
+are used.<BR><BR>onLoad:<BR><BR>These are variables created and set at the 
+onload event handler:<BR><BR><PRE class=code>onLoad="
+if(is.ns4 ||is.ns6) {
+available_width=innerWidth;
+available_height=innerHeight;
+layerSetup();
+} else if(is.ie4 || is.ie5) {
+available_width=document.body.clientWidth;
+available_height=document.body.clientHeight;
+layerSetup();
+}"
+</PRE>Once again we need to create a little cross browser and backward 
+compatible DOM switch. Netscape 4 and Netscape 6 use innerWidth and InnerHeight 
+to detect a users screen resolution. Therefore, we create a browser detection 
+condition.<BR><BR>if(is.ns4 ||is.ns6) {<BR><BR>if this condition holds true then 
+the variables available_width and available_height are assigned the correct DOM 
+method for Netscape 4 and Netscape 6 and the layerSetup() script is 
+triggered.<BR><PRE class=code>available_width=innerWidth;
+available_height=innerHeight;
+layerSetup();
+</PRE><BR>If the condition is not true then attention is focused on the Internet 
+explorer part of the script and the DOM for those browsers is utilised.<BR><PRE class=code>} else if(is.ie4 || is.ie5) {
+available_width=document.body.clientWidth;
+available_height=document.body.clientHeight;
+layerSetup();
+}"
+</PRE><BR>Screen Resolution:<BR><BR>Having captured a users screen resolution 
+settings we can then use the newly formed variables to position the layer by 
+screen resolution. Hence, the values of <FONT class=code>available_width/2-100, 
+available_height/2</FONT>, in the layerSetup() script. To determine the meaning 
+of these values, lets think about this in a different way. The value <FONT 
+class=code>available_width/2-100</FONT> literally stands for the users screen 
+resolution divided by 2 and minus 100 pixels from left.<BR><BR>Dividing the 
+screen by half, centres the layer. However, its positioning is determined by the 
+top left corner of the layer. Therefore, if the content of the layer is 
+sufficiently wide enough, then the layer appears as not being centred. To 
+overcome this we need to take into consideration the layer width. In this 
+instance, the css layer centerLayer width is 200 pixels. We halve that and 
+recognise that for it to appear centred we need to move it over to the left by 
+100 pixels. Hence the -100 in the left value. The same logic is applied to top 
+attribute where the screen resolution is divided in half and then the layers 
+height is taken into account.<BR><BR>Lets look at the completed script:<BR><PRE class=code>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;How to Center A Layer&lt;/title&gt;
+
+&lt;script&gt;
+function Is() {
+var agent = navigator.userAgent.toLowerCase();
+this.major = parseInt(navigator.appVersion);
+this.minor = parseFloat(navigator.appVersion);
+this.ns = ((agent.indexOf('mozilla') != -1) &amp;&amp;
+(agent.indexOf('spoofer') == -1) &amp;&amp;
+(agent.indexOf('compatible') == -1) &amp;&amp;
+(agent.indexOf('opera') == -1) &amp;&amp;
+(agent.indexOf('webtv') == -1));
+this.ns2 = (this.ns &amp;&amp; (this.major == 2));
+this.ns3 = (this.ns &amp;&amp; (this.major == 3));
+this.ns4 = (this.ns &amp;&amp; (this.major == 4));
+this.ns6 = (this.ns &amp;&amp; (this.major &gt;= 5));
+this.ie = (agent.indexOf("msie") != -1);
+this.ie3 = (this.ie &amp;&amp; (this.major &lt; 4));
+this.ie4 = (this.ie &amp;&amp; (this.major &gt;= 4));
+this.ie5 = (this.ie &amp;&amp; (this.major == 4) &amp;&amp;
+(agent.indexOf("msie 5.0") != -1));
+this.ieX = (this.ie &amp;&amp; !this.ie3 &amp;&amp; !this.ie4);
+}
+
+var is = new Is();
+
+function layerObject(id,position,left,top,visibility) {
+if (is.ie5||is.ns6){
+this.obj = document.getElementById(id).style;
+this.obj.position = position;
+this.obj.left = left;
+this.obj.top = top;
+this.obj.visibility = visibility;
+return this.obj;
+} else if(is.ie4) {
+this.obj = document.all[id].style;
+this.obj.position = position;
+this.obj.left = left;
+this.obj.top = top;
+this.obj.visibility = visibility;
+return this.obj;
+} else if(is.ns4) {
+this.obj = document.layers[id];
+this.obj.position = position;
+this.obj.left = left;
+this.obj.top = top;
+this.obj.visibility = visibility;
+return this.obj;
+} 
+}
+
+function layerSetup() {
+centerLyr = new layerObject('centerLayer','absolute', available_width/2-100,available_height/2-12,'visible');
+}
+&lt;/script&gt;
+&lt;style type="text/css"&gt;
+&lt;!--
+.main { 
+font-family: Georgia, "Times New Roman", Times, serif; 
+font-size: 16px; 
+color: #FBEED5; 
+text-decoration: none
+}
+--&gt;
+&lt;/style&gt; 
+&lt;/head&gt;
+
+&lt;body bgcolor="#999999" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" scroll="no" onLoad="
+if(is.ns4 ||is.ns6) {
+available_width=innerWidth;
+available_height=innerHeight;
+layerSetup();
+} else if(is.ie4 || is.ie5) {
+available_width=document.body.clientWidth;
+available_height=document.body.clientHeight;
+layerSetup();
+}"
+onResize="
+if(is.ns4 ||is.ns6||is.ie4||is.ie5) {
+history.go(0);
+}"
+&gt;
+
+&lt;DIV ID="centerLayer" STYLE="position: absolute; width:200px; height:24px; left: 0px; top: 0px; z-index: 6; visibility: hidden;"&gt;
+&lt;span class="main"&gt;This is a Layer Centred By Screen Resolution&lt;/span&gt; 
+&lt;/DIV&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</PRE><A href="http://www.dhtmlnirvana.com/alchemy/">Return to the Alchemy 
+Index</A> </DIV></DIV></BODY></HTML>

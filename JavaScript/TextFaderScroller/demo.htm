@@ -1,0 +1,74 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Text Animator v5.1</title>
+
+<!--
+=================================================================
+      start setup for the text fader scroller TextFadeScroller.js
+=================================================================
+-->
+<style type="text/css">
+<!-- 
+p.main       { font-family: Arial; font-size: 30pt; font-weight: bold }
+-->
+</style>
+<script LANGUAGE="JavaScript" src="TextFaderScroller.js"></script>
+<script LANGUAGE="JavaScript">
+// .textanimlink { text-decoration: none }
+
+ bgcolor="#FFFFFF"; //Color of background
+ color="#00008D";  //Color of the Letters
+ 
+ FadeStep=7 //7
+ 
+  // define messages 
+
+message= new Array();
+  
+message[0]='Textanimator version 5.1'
+message[1]='New in 5.1 : Fixed IE 5 align bug'
+message[2]='<a href="http://www.geocities.com/~lef/instructions7.html" target="_blank" id="textanimlink" class="textanimlink">Click here to see what\'s new !</a #FFFFFF"; ; s>'
+message[3]='Check out my other script\'s too'
+message[4]='&copy; 1997 - 1999     Lefteris Haritou'
+message[5]='This <font color="#FF0000">is a</font> test'
+
+</script>
+<!--
+=================================================================
+      End setup for the text fader scroller TextFadeScroller.js
+=================================================================
+-->
+</head>
+
+<body link="#FF0000" vlink="#FF0000" alink="#FFFF00" text="#000000">
+
+TextFaderScroller.js demo
+<p>&nbsp;</p>
+<p>This<font color="#FFFF00"> is a </font>test</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!--
+==========================================================
+      start the text fader scroller TextFadeScroller.js
+==========================================================
+-->
+<div id="textanim" style="position: absolute; left: 0; top: 80; width: 774; height: 19" onclick="breakf()">
+</div>
+<Layer name="textanim" left=0 top=80>
+</Layer>
+</noscript>
+<script>initTextAnim();start();</script>
+<!--
+==========================================================
+      End the text fader scroller TextFadeScroller.js
+==========================================================
+-->
+
+</body>
+
+</html>

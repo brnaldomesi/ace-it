@@ -1,0 +1,151 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<!-- slide menu styles -->
+<style>
+<!--
+#slidemenubar, #slidemenubar2 { cursor: hand; position: absolute; left: -123px; width: 180px; top: 145px; 
+               layer-background-image: url(screen1.gif); font-style: normal; 
+               font-variant: normal; font-weight: bold; font-size: 12px; 
+               font-family: arial; border: 2px solid darkblue; margin-left: 
+               0px }
+#menu a      { text-align: left; line-height: 18px; color: #6D4A9D }
+#menu a:hover { background-color: #FFFFFF; color: darkblue }
+-->
+</style>
+<!-- end slide menu styles -->
+
+</head>
+
+<body>
+
+<p><!--  *********************  Slide Menu Script Starts here *********** --> 
+
+<script LANGUAGE="JavaScript1.2">
+  /* //:::::::::::   SLIDE MENU   :::::::::::\\
+                   
+  	This script can be used as long as this
+  	disclaimer is left untouched.
+  	For more Scripts and Web Design see
+     http://www.venusdesigns.net or contact
+     tiffany@venusdesigns.net
+
+  	Some parts of the code are based on DHTML
+  	scripts by dynamicDrive.com and by 
+     micahgoulart@mailbr.com.br
+  	
+  //:::::::::::   copyright 1999   :::::::::::\\	*/
+  	
+  var NS4 = (document.layers) ? true : false;
+  var IE4 = (document.all) ? true : false;
+
+
+  if (IE4)
+    document.write("<DIV ID='slidemenubar2' STYLE='left:-153' onMouseover='pull()' onMouseout='draw()'>")
+</script>
+
+<layer ID="slidemenubar" onMouseover="pull()" onMouseout="draw()"> 
+
+<script LANGUAGE="JavaScript1.2">
+  var links=new Array()
+  var linksURL=new Array()
+
+  //extend or shorten this list
+  links[0]="home";
+  links[1]="links";
+  links[2]="Site Map";
+  links[3]="javascripts";
+  links[4]="freestuff";
+  links[5]="FrontPage Gallery";
+  links[6]="FAQ's";
+  links[7]="Search";
+  links[8]="tips and tutorials";
+  links[9]="themes";
+  links[10]="what's new";
+  links[11]="mail list";
+  links[12]="Add-ins";
+  links[13]="FP Components";
+  links[14]="Site of the Month";
+  links[15]="FP 2000";
+
+  //These are the links pertaining to the above text.
+  linksURL[0]="index.html";
+  linksURL[1]="links.htm";
+  linksURL[2]="toc.htm";
+  linksURL[3]="scripts.htm";
+  linksURL[4]="freebies.htm";
+  linksURL[5]="madewith.htm";
+  linksURL[6]="faqs.htm";
+  linksURL[7]="search.htm";
+  linksURL[8]="tips.htm";
+  linksURL[9]="themes.htm";
+  linksURL[10]="whatsnew.htm";
+  linksURL[11]="maillist.htm";
+  linksURL[12]="j-bots.htm";
+  linksURL[13]="fpcomp.htm";
+  linksURL[14]="../siteofmonth/index.html";
+  linksURL[15]="fp2k.htm";
+
+  for (i=0;i<=links.length-1;i++)
+    document.write("<DIV ID='menu' ALIGN='left'><A HREF=" + linksURL[i] + ">&nbsp; " + links[i] + "&nbsp;</A></DIV>")
+
+  if(IE4)
+    {	slidemenubar2.style.backgroundImage = "url(menu.gif)";	}
+</script>
+
+</layer>
+
+<script LANGUAGE="JavaScript1.2">
+  function generator()
+  {	window.location.reload()	}
+
+  function generator2()
+  {	if (NS4)
+  		setTimeout("window.onresize=generator", 400)	}
+
+  window.onload = generator2
+
+  if (IE4)
+  {	document.write("</DIV>")
+  	themenu = slidemenubar2.style
+  	rightboundary = 0;
+  	leftboundary= -153;	}
+
+  else
+  {	themenu = document.layers.slidemenubar;
+  	rightboundary = 123;
+  	leftboundary = 10;	}
+
+  function pull()
+  {	if (window.drawMenu)
+  	  clearInterval(drawMenu)
+  	  pullMenu = setInterval("pullEngine()",20)	}
+
+  function draw()
+  {	clearInterval(pullMenu)
+  	drawMenu = setInterval("drawEngine()",20)	}
+
+  function pullEngine()
+  {	if (IE4 && themenu.pixelLeft<rightboundary)
+  	  themenu.pixelLeft+=10
+  	else if(NS4 && themenu.left<rightboundary)
+  	  themenu.left+=10
+  	else if (window.pullMenu)
+  	  clearInterval(pullMenu)	}
+
+
+  function drawEngine()
+  {	if (IE4 && themenu.pixelLeft>leftboundary)
+  		themenu.pixelLeft-=10
+  	else if(NS4 && themenu.left>leftboundary)
+  		themenu.left-=10
+  	else if (window.drawMenu)
+  		clearInterval(drawMenu)	}
+  		
+</script> <!-- ************** Slide Menu Script End here ************* -->
+
+</body>
+
+</html>

@@ -1,0 +1,394 @@
+<html>
+
+<head>
+<title>Clock</title>
+<script language="javascript">
+var dot=65
+rads=new Array(65)
+function rad () {
+for (i=1; i<dot; i++) {
+	if (document.all) rads[i]=new Array (eval('rad'+i).style,-100,-100)
+	else rads[i] = new Array (eval('document.rad'+i),-100,-100)
+	}
+}
+
+function setCircle() {
+	for (i=1; i<dot; i++) {
+		rads[i][0].left=rads[i][1]+pX-15
+		if (document.layers) rads[i][0].left+=10
+		rads[i][0].top=rads[i][2]+pY-15
+		//if (document.layers) rads[i][0].top-=5
+
+	}
+}
+
+
+function counter() {
+		for (i=1; i<dot; i++) {
+		rad=Math.PI*(i/((dot-1)/2))
+		rads[i][1] = Math.sin(rad)*60;
+		rads[i][2] = -Math.cos(rad)*60;
+		}
+setCircle()
+}
+
+pX=100;pY=100
+obs = new Array(13)
+function ob () {
+for (i=0; i<13; i++) {
+	if (document.all) obs[i]=new Array (eval('ob'+i).style,-100,-100)
+	else obs[i] = new Array (eval('document.ob'+i),-100,-100)
+	}
+}
+function cl(a,b,c){
+	if (document.all) {
+		if (a!=0) b+=-1
+		eval('c'+a+'.style.pixelTop='+(pY+(c-5)))
+		eval('c'+a+'.style.pixelLeft='+(pX+(b)))
+		}
+else{
+	if (a!=0) b+=10
+	eval('document.c'+a+'.top='+(pY+(c)))
+	eval('document.c'+a+'.left='+(pX+(b)))
+}
+}
+
+function runClock() {
+	for (i=0; i<13; i++) {
+		obs[i][0].left=obs[i][1]+pX
+		obs[i][0].top=obs[i][2]+pY
+	}
+}
+
+var lastsec
+function timer() {
+	time = new Date ()
+	sec = time.getSeconds()
+	if (sec!=lastsec) {
+
+		lastsec = sec
+		sec=Math.PI*sec/30
+		min=Math.PI*time.getMinutes()/30
+		hr =Math.PI*((time.getHours()*60)+time.getMinutes())/360
+		for (i=1;i<6;i++) {
+			obs[i][1] = Math.sin(sec) * (44 - (i-1)*11)-16;
+			if (document.layers)obs[i][1]+=10;
+			obs[i][2] = -Math.cos(sec) * (44 - (i-1)*11)-27;
+		}
+		for (i=6;i<10;i++) {
+			obs[i][1] = Math.sin(min) * (40 - (i-6)*10)-16;
+			if (document.layers)obs[i][1]+=10;
+			obs[i][2] = -Math.cos(min) * (40 - (i-6)*10)-27;
+		}
+		for (i=10;i<13;i++) {
+			obs[i][1] = Math.sin(hr) * (37 - (i-10)*11)-16;
+			if (document.layers)obs[i][1]+=10;
+			obs[i][2] = -Math.cos(hr) * (37 - (i-10)*11)-27;
+		}
+	}
+
+}
+function setNum(){
+cl (0,-67,-65);
+cl (1,10,-51);
+cl (2,28,-33);
+cl (3,35,-8);
+cl (4,28,17);
+cl (5,10,35);
+cl (6,-15,42);
+cl (7,-40,35);
+cl (8,-58,17);
+cl (9,-65,-8);
+cl (10,-58,-33);
+cl (11,-40,-51);
+cl (12,-16,-56);
+
+}
+</script>
+
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body text="black" onload="rad();counter();ob();setNum();setInterval('timer()',100);setInterval('runClock()',100)">
+
+<div id="c0" style="position:absolute;left:36;top:36; z-index:2;">
+  <table>
+    <tr>
+      <td bgcolor="ffffff" width="126" height="126">&nbsp;</td>
+  </table>
+</div>
+<div id="c1" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;">
+  <b>1</b>
+</div>
+<div id="c2" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;">
+  <b>2</b>
+</div>
+<div id="c3" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;">
+  <b>3</b>
+</div>
+<div id="c4" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;">
+  <b>4</b>
+</div>
+<div id="c5" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;">
+  <b>5</b>
+</div>
+<div id="c6" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;">
+  <b>6</b>
+</div>
+<div id="c7" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;">
+  <b>7</b>
+</div>
+<div id="c8" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;">
+  <b>8</b>
+</div>
+<div id="c9" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;">
+  <b>9</b>
+</div>
+<div id="c10" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;">
+  <b>10</b>
+</div>
+<div id="c11" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;">
+  <b>11</b>
+</div>
+<div id="c12" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;">
+  <b>12</b>
+</div>
+<div id="ob0" style="position:absolute;left:-20;top:-20;z-index:1">
+  &nbsp;
+</div>
+<div id="ob1" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font size="+3" color="#0000FF"><b>.</b></font>
+</div>
+<div id="ob2" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font size="+3" color="#0000FF"><b>.</b></font>
+</div>
+<div id="ob3" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font size="+3" color="#0000FF"><b>.</b></font>
+</div>
+<div id="ob4" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font size="+3" color="#0000FF"><b>.</b></font>
+</div>
+<div id="ob5" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font size="+3" color="#0000FF"><b>.</b></font>
+</div>
+<div id="ob6" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font size="+3" color="#00ffff"><b>.</b></font>
+</div>
+<div id="ob7" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font size="+3" color="#00ffff"><b>.</b></font>
+</div>
+<div id="ob8" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font size="+3" color="#00ffff"><b>.</b></font>
+</div>
+<div id="ob9" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font size="+3" color="#00ffff"><b>.</b></font>
+</div>
+<div id="ob10" style="position:absolute;left:-20;top:-20;z-index:6">
+  <font size="+3" color="#FF0000"><b>.</b></font>
+</div>
+<div id="ob11" style="position:absolute;left:-20;top:-20;z-index:6">
+  <font size="+3" color="#FF0000"><b>.</b></font>
+</div>
+<div id="ob12" style="position:absolute;left:-20;top:-20;z-index:6">
+  <font size="+3" color="#FF0000"><b>.</b></font>
+</div>
+<div id="rad0" style="position:absolute;left:-20;top:-20;z-index:1">
+  &nbsp;
+</div>
+<div id="rad1" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad2" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad3" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad4" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad5" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad6" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad7" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad8" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad9" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad10" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad11" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad12" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad13" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad14" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad15" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad16" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad17" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad18" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad19" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad20" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad21" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad22" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad23" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad24" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad25" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad26" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad27" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad28" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad29" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad30" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad31" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad32" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad33" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad34" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad35" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad36" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad37" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad38" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad39" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad40" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad41" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad42" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad43" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad44" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad45" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad46" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad47" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad48" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad49" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad50" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad51" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad52" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad53" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad54" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad55" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad56" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad57" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad58" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad59" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad60" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad61" style="position:absolute;left:-20;top:-20;z-index:8">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad62" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad63" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+<div id="rad64" style="position:absolute;left:-20;top:-20;z-index:7">
+  <font color="#000000"><b>.</b></font>
+</div>
+
+</body>
+
+</html>

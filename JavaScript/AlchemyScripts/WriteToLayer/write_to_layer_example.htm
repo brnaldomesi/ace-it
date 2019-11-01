@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"> 
+<html>
+
+<head>
+
+<!--
+    This page created by Web Shorts Site Design
+          All content, including artwork
+    is copyright © 2000 Web Shorts Site Design
+               All Rights Reserved.
+         You may look at our source code,
+      but any unauthorized use is prohibited
+          by United States copyright law.
+-->
+
+
+<title>Write To Layer Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<SCRIPT language="JavaScript">
+<!--
+function writetoLyr(name, message) {
+    if (document.layers) {
+        document.layers[name].document.close();
+        document.layers[name].document.write(message);
+        document.layers[name].document.close();
+    } else {
+        if (document.all) {
+            eval("document.all." + name + ".innerHTML='" + message + "'");
+        } else {
+            document.getElementById(name).innerHTML = message;
+        }
+    }
+}
+//-->
+</SCRIPT>
+<link rel="stylesheet" href="../../dhtmlshock.css">
+</head>
+
+<body bgcolor="#CCCCCC" background="../../GFX/background.gif">
+
+<div id="TestLayer" style="position:absolute; width:200px; height:22px; z-index:1; left: 10px; top: 10px">
+  <p><font color="#FFFF66"><b>Testing</b></font></p>
+</div>
+<p>&nbsp;</p>
+<p><a href="javascript:;" onclick="writetoLyr('TestLayer', '&lt;P&gt;&lt;FONT color=#FFFF66&gt;&lt;B&gt;See, it works!!!&lt;/B&gt;&lt;/FONT&gt;&lt;/P&gt;')">Change
+OnClick</a> | <a href="javascript:;" onmouseover="writetoLyr('TestLayer', '&lt;P&gt;&lt;FONT color=#FFFF66&gt;&lt;B&gt;See, still works!!!&lt;/B&gt;&lt;/FONT&gt;&lt;/P&gt;')">OnMouseover</a></p>
+
+</body>
+
+</html>
+<% rsScript.close
+set rsScript = nothing
+ %>

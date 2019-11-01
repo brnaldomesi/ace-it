@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0042)http://dhtmlnirvana.com/alchemy/writto.htm -->
+<HTML><HEAD><TITLE>Alchemy: DHTML Scripts</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<SCRIPT language=JavaScript>
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</SCRIPT>
+
+<STYLE>BODY {
+	SCROLLBAR-FACE-COLOR: #666666; SCROLLBAR-HIGHLIGHT-COLOR: #999999; SCROLLBAR-SHADOW-COLOR: black; SCROLLBAR-ARROW-COLOR: red; SCROLLBAR-BASE-COLOR: black; scrollbar-3d-light-color: #999999; scrollbar-dark-shadow-color: #333333
+}
+SUP {
+	COLOR: #800000
+}
+.code {
+	FONT-SIZE: 14px; COLOR: #ffffcc; FONT-STYLE: normal; FONT-FAMILY: "Times New Roman", Times, serif
+}
+</STYLE>
+
+<META content="MSHTML 5.50.4611.1300" name=GENERATOR></HEAD>
+<BODY text=#ffffff vLink=#ffffff aLink=#ff9999 link=#ffffff bgColor=#996666 
+onload="">
+<DIV id=graybarLayer 
+style="BORDER-RIGHT: #000000 1px; BORDER-TOP: #000000 1px; Z-INDEX: 1; LEFT: 0px; BORDER-LEFT: #000000 1px; WIDTH: 1024px; BORDER-BOTTOM: #000000 1px; POSITION: absolute; TOP: 0px; HEIGHT: 60px; BACKGROUND-COLOR: #646056; layer-background-color: #646056">Write 
+HTML To Layer</DIV>
+<DIV id=topbarLayer 
+style="Z-INDEX: 2; LEFT: 0px; WIDTH: 200px; POSITION: absolute; TOP: 50px; HEIGHT: 53px"><IMG 
+height=54 src="WriteToLayer_files/background_r2_c1.gif" width=1024></DIV>
+<DIV id=codeLayer 
+style="Z-INDEX: 12; LEFT: 100px; WIDTH: 400px; POSITION: absolute; TOP: 120px; HEIGHT: 50px">Let's 
+make the script first. <PRE class=code>&lt;script language="JavaScript"&gt;<BR>&lt;!--<BR>function writetoLyr(id, message) {<BR>if (document.layers) {<BR>document.layers[id].document.write(message)<BR>document.layers[id].document.close()<BR>} else if (document.all) {<BR>eval("document.all."+id+".innerHTML='"+message+"'")<BR>} else {<BR>document.getElementById(id).innerHTML = message;<BR>}<BR>}<BR>//--&gt;<BR>&lt;/script&gt;</PRE>
+<P>We initially create our function() with two arguments "id" and "message". 
+Netscape 4 doesn't allow the use of the innerHTML so for this series of browsers 
+we document.write the html or text into a CSS Layer. For NS4, we need to create 
+a conditional branch by using <SPAN class=code>if (document.layers) {</SPAN>. 
+Once having set that condition we then write to the layer by utilizing our two 
+arguments<SPAN class=code>id</SPAN> and <SPAN class=code>message</SPAN>. The 
+first arguments is used to identify the layer to write to, while the second 
+arguments is the html and / or text to insert into the layer. These two 
+arguments will allow us to insert html or text at the event handler point (see 
+below). </P>
+<P>For Internet Explorer we script the html or text to be inserted by using the 
+same value as the second arguments<SPAN class=code>message</SPAN>. To preserve 
+backward compatibility with Internet Explorer 4, we use another conditional 
+branch <SPAN class=code>} else if (document.all) {</SPAN> . Writing to the CSS 
+layer is achieved by the use of innerHTML. In this condition, the same arguments 
+methods are utilize as per NS4. </P>
+<P>Then final thing left to do is to get some Netscape 6 functionality into the 
+script. Actually if we were only interested in IE5+ and NS6 we could use this 
+single line of script that's utilize in the above script: <SPAN 
+class=code>document.getElementById(id).innerHTML = message;</SPAN> This part of 
+the script uses the same methods as utilize in the Internet Explorer part except 
+we use the W3C standard of document.getElementById(). To illustrate the power of 
+standards lets make a DOM based script and then compare the leanness of the 
+script compared to the original. </P>
+<P><SPAN class=code>&lt;Script language="JavaScript"&gt;<BR>&lt;!--<BR>function 
+writetoLyr(id, message) {<BR>if (document.getElementById) 
+{<BR>document.getElementById(id).innerHTML = 
+message;<BR>}<BR>}<BR>//--&gt;<BR>&lt;/script&gt;</SPAN><BR><BR>Quite a saving 
+isn't it! The final part to getting this to all work in browsers is to use an 
+even handler to call the script. <BR><BR><SPAN class=code>&lt;a 
+href="javascript:" onClick="writetoLyr('testLayer','Slap me!!')"&gt;Click 
+Me&lt;/a&gt; </SPAN></P><PRE>Here's a complete working example, aren't I good to you 
+guys :-)
+
+
+<SPAN class=code>&lt;html&gt;<BR>&lt;head&gt;<BR>&lt;title&gt;Write HTML TO Layer&lt;/title&gt;<BR>&lt;script language="JavaScript"&gt;<BR>&lt;!--<BR>function writetoLyr(id, message) {<BR>if (document.layers) {<BR>document.layers[id].document.write(message)<BR>document.layers[id].document.close()<BR>} else if (document.all) {<BR>eval("document.all."+id+".innerHTML='"+message+"'")<BR>} else {<BR>document.getElementById(id).innerHTML = message;<BR>}<BR>}<BR>//--&gt;<BR>&lt;/script&gt;<BR>&lt;/head&gt;</SPAN></PRE>
+<P class=code>&lt;body&gt;<BR>&lt;div id="testLayer" style="position:absolute; 
+width:200px; height:115px; z-index:1; left: 99px; top: 
+160px"&gt;&lt;/div&gt;</P>
+<P class=code>&lt;a href="javascript:" onClick="writetoLyr('testLayer','Slap 
+me!!')"&gt;Click Me&lt;/a&gt;</P>
+<P class=code>&lt;/body&gt;<BR>&lt;/html&gt;</P><BR><BR><A 
+href="http://www.dhtmlnirvana.com/alchemy/">Return to the Alchemy Index</A> 
+</DIV></BODY></HTML>

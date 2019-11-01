@@ -1,0 +1,122 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Highlight Layers</title>
+</head>
+
+<body>
+
+<br>
+<table cellspacing="0" cellpadding="0" width="70%" bgcolor="black" border="0">
+  <tbody>
+    <tr>
+      <td>
+        <table cellspacing="1" cellpadding="3" width="100%" border="0">
+          <tbody>
+            <tr>
+              <td valign="top" align="middle" bgcolor="#eeeeee"><font face="VERDANA">
+                <h3>Highlight Layers</h3>
+                </font></td>
+            </tr>
+            <tr>
+              <td valign="top" align="left" bgcolor="white"><font face="VERDANA" size="2">This is probably the easiest DHMTL effect you can do. But to make it
+                cross-browser compatible takes some knowledge. The best way to do this is to make a TABLE and use ILAYER and LAYER tags.<br>
+                <ul>
+                  <font size="1">&lt;TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0&gt;<br>
+                  &nbsp;&nbsp;&lt;TR&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;TD&gt;&lt;/TD&gt;<br>
+                  &nbsp;&nbsp;&lt;/TR&gt;<br>
+                  &nbsp;&nbsp;&lt;TR&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;TD&gt;&lt;/TD&gt;<br>
+                  &nbsp;&nbsp;&lt;/TR&gt;<br>
+                  &lt;TABLE&gt;</font>
+                </ul>
+                Just so you know, the cellpadding has to be 0 so that the highlighting in Netscape works 100%. So, we have made 2 sections for highlightable
+                layers. The next step is to add a with to the TDs or the TABLE. But for now we'll add it to the table. So it should look like this now:<br>
+                <ul>
+                  <font size="1">&lt;TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH=150&gt;<br>
+                  &nbsp;&nbsp;&lt;TR&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;TD&gt;&lt;/TD&gt;<br>
+                  &nbsp;&nbsp;&lt;/TR&gt;<br>
+                  &nbsp;&nbsp;&lt;TR&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;TD&gt;&lt;/TD&gt;<br>
+                  &nbsp;&nbsp;&lt;/TR&gt;<br>
+                  &lt;TABLE&gt;</font>
+                </ul>
+                Now to get on with the highlighting. Lets add the Internet Explorer highlight. Add the onmouseover and onmouseout events to the TDs. Both should
+                look like this now:<br>
+                <ul>
+                  <font size="1">&lt;TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH=150&gt;<br>
+                  &nbsp;&nbsp;&lt;TR&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;TD BGCOLOR=white ONMOUSEOVER=&quot;bgColor='yellow'&quot; ONMOUSEOUT=&quot;bgColor='white'&quot;&gt;&lt;/TD&gt;<br>
+                  &nbsp;&nbsp;&lt;/TR&gt;<br>
+                  &nbsp;&nbsp;&lt;TR&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;TD BGCOLOR=white ONMOUSEOVER=&quot;bgColor='yellow'&quot; ONMOUSEOUT=&quot;bgColor='white'&quot;&gt;&lt;/TD&gt;<br>
+                  &nbsp;&nbsp;&lt;/TR&gt;<br>
+                  &lt;TABLE&gt;</font>
+                </ul>
+                For the final step, lets add the Netscape LAYERs. Internet Explorer totally ignores them so it is safe to put them. Plus Netscape totally
+                ignores ONMOUSEOVER and ONMOUSEOUT attributes on TD tags. Now we will have to add an ILAYER and a LAYER tag and text to each of the cells of the
+                table. The final product should look like this:<br>
+                <ul>
+                  <font size="1">&lt;TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH=150&gt;<br>
+                  &nbsp;&nbsp;&lt;TR&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;TD BGCOLOR=white ONMOUSEOVER=&quot;bgColor='yellow'&quot; ONMOUSEOUT=&quot;bgColor='white'&quot;&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ILAYER&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;LAYER ONMOUSEOVER=&quot;this.bgColor='yellow'&quot; ONMOUSEOUT=&quot;this.bgColor='white'&quot;
+                  WIDTH=&quot;100%&quot;&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highlight 1<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/LAYER&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ILAYER&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/TD&gt;<br>
+                  &nbsp;&nbsp;&lt;/TR&gt;<br>
+                  &nbsp;&nbsp;&lt;TR&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;TD BGCOLOR=white ONMOUSEOVER=&quot;bgColor='yellow'&quot; ONMOUSEOUT=&quot;bgColor='white'&quot;&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ILAYER&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;LAYER ONMOUSEOVER=&quot;this.bgColor='yellow'&quot; ONMOUSEOUT=&quot;this.bgColor='white'&quot;
+                  WIDTH=&quot;100%&quot;&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Highlight 2<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/LAYER&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ILAYER&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/TD&gt;<br>
+                  &nbsp;&nbsp;&lt;/TR&gt;<br>
+                  &lt;TABLE&gt;</font>
+                </ul>
+                It should work like this example below:<br>
+                <ul>
+                  <table cellspacing="0" cellpadding="0" width="150" border="1">
+                    <tbody>
+                      <tr>
+                        <td onmouseover="bgColor='yellow'" onmouseout="bgColor='white'" bgcolor="white"><ILAYER>
+                          <LAYER onmouseover="this.bgColor='yellow'" 
+onmouseout="this.bgColor='white'" WIDTH="100%">
+                          Highlight 1 </LAYER>
+                          </ILAYER>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td onmouseover="bgColor='yellow'" onmouseout="bgColor='white'" bgcolor="white"><ILAYER>
+                          <LAYER onmouseover="this.bgColor='yellow'" 
+onmouseout="this.bgColor='white'" WIDTH="100%">
+                          Highlight 2 </LAYER>
+                          </ILAYER>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </ul>
+                </font></td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+
+</html>

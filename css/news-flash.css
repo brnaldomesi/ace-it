@@ -1,0 +1,30 @@
+.newsflash {
+    display: inline-block;
+    float: right;
+    height: auto;
+    margin: 0em 0em 0em 0em;
+    border: 1px solid #d8d8d8;
+    padding: 0px;
+    background: #fffff0;
+    font-size: 0.85em;
+}
+
+.newsflash h3 {
+    font-size: 100%;
+    font-family: inherit;
+    font-weight: bold;
+    margin: 0px;
+    padding: 3px;
+    color: #5e5e5e;
+    border-bottom: 1px dashed #d8d8d8;
+}
+
+.newsflash ul {
+    list-style: square;
+    margin-left: 1em;
+    padding: 8px;
+}
+
+.newsflash li {
+    margin-bottom: .5em;
+}

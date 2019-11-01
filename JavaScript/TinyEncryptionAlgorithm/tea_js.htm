@@ -1,0 +1,189 @@
+<HTML>
+<HEAD>
+
+
+</HEAD>
+
+<BODY onLoad="init()">
+
+<FORM NAME="form1">
+
+<CENTER>
+<P> Enter new numeric values, less than 15 digits each, into the relevant &quot;KEY&quot; boxes before clicking in the form box marked &quot;ENCRYPT&quot;. A prompt window is then displayed into which you should enter a number containing no more than 30 digits.</P>
+<P> This number will be split into two parts and each part enciphered using the Tiny Encryption Algorithm. The results are then displayed back in the same form box.</P>
+<P> An alert box is then displayed. Clicking &quot;OK&quot; will then decipher the number and display it back in the same form box. </P> 
+
+<P><STRONG><U>Enter Key Definitions Here</U></STRONG><BR>
+   Key 1&nbsp;<INPUT TYPE="text" NAME="encrypt_key1" SIZE=20> <BR>
+   Key 2&nbsp;<INPUT TYPE="text" NAME="encrypt_key2" SIZE=20> <BR>
+   Key 3&nbsp;<INPUT TYPE="text" NAME="encrypt_key3" SIZE=20> <BR>
+   Key 4&nbsp;<INPUT TYPE="text" NAME="encrypt_key4" SIZE=20> 
+</P>
+
+<P>Encrypt &nbsp;<INPUT TYPE="text" NAME="encrypt_num" SIZE=40
+      onFocus="return getEncipher(this)"> </P>
+</CENTER>
+
+</FORM>
+
+</BODY>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+//--------------------------------------GLOBAL VARIABLES-------------------------
+
+var br = true
+//----------------------KEY DEFINITION
+var k1 
+var k2 
+var k3 
+var k4 
+//----------------------
+var l1
+var l2
+var le = ""
+var p1
+var p2
+var p3 = 0
+var p4 = 0
+
+
+//--------------------------------------FUNCTION DEFINITIONS----------------------
+
+function encipher(p1, p2, k1, k2, k3, k4)
+{	var y     = new Number(p1)
+	var z     = new Number(p2)
+	var a     = new Number(k1)
+	var b     = new Number(k2)
+	var c     = new Number(k3)
+	var d     = new Number(k4)
+	var sum   = 0
+	var delta = 0x9E3779B9
+	var n     = 32
+	while (n --> 0)
+      {	sum += delta
+		y += (z << 4) + a ^ z + sum ^ (z >> 5) + b
+		z += (y << 4) + c ^ y + sum ^ (y >> 5) + d
+	}
+	p3 = y
+	p4 = z
+}
+
+function decipher(p1, p2, k1, k2, k3, k4)
+{	var y     = new Number(p1)
+	var z     = new Number(p2)
+	var a     = new Number(k1)
+	var b     = new Number(k2)
+	var c     = new Number(k3)
+	var d     = new Number(k4)
+// sum = delta<<5, in general sum = delta * n
+	var sum   = 0xC6EF3720
+	var delta = 0x9E3779B9
+	var n     = 32
+	while (n --> 0)
+      {	z -= (y << 4) + c ^ y + sum ^ (y >> 5) + d
+		y -= (z << 4) + a ^ z + sum ^ (z >> 5) + b
+		sum -= delta
+	}
+	p3 = y
+	p4 = z
+}
+
+function getNum(entry) 
+{	msg = 'Please enter the number to be encrypted here. '
+	return prompt(msg, entry)
+}
+
+function strip(val) 
+{	v = "" + val
+	if (v == "")
+	{	return ""
+	}
+	var c = ""
+	var r = ""
+	var s = ""
+	var t = ""
+	var i
+	for (i = 0; i < v.length; i++) 
+	{	c = v.charAt(i)
+		if ("0123456789".indexOf(c) != -1)
+		{	r += c
+		}
+	}
+	var p = parseInt(r.length/2)
+	for (i = 0; i < r.length; i++) 
+	{	c = r.charAt(i)
+		if (i >= p)
+		{	t += c
+           } else
+		{	s += c
+		}
+	}
+	l1 = p
+	l2 = parseInt(r.length - p)
+	p1 = s
+	p2 = t
+	return r
+}
+
+function getEncipher() 
+{	k1 = document.form1.encrypt_key1.value
+	k2 = document.form1.encrypt_key2.value
+	k3 = document.form1.encrypt_key3.value
+	k4 = document.form1.encrypt_key4.value
+	if (br) 
+	{	le = document.form1.encrypt_num.value
+	}
+	var a
+	var b
+	var e = getNum(le)
+	var d = strip(e)
+	while (d.length > 30)
+	{	alert('The number you entered contains more than 30 '
+    			+ 'digits; please check the number and try again.')
+		le = e
+		e = getNum(le)
+		d = strip(e)
+	}
+	if (d != '') 
+	{	encipher(p1, p2, k1, k2, k3, k4)
+		document.form1.encrypt_num.value = "" + p3 + '  ' + p4
+		alert('hit OK to return to the original number')
+		p1 = p3
+		p2 = p4
+		decipher(p1, p2, k1, k2, k3, k4)
+		p3 = "" + p3
+		while (p3.length < l1)
+		{	p3 = '0' + p3
+		}
+		p4 = "" + p4
+		while (p4.length < l2)
+		{	p4 = '0' + p4
+		}
+		document.form1.encrypt_num.value = "" + p3 + p4
+		blur_form()
+	} else
+	{	blur_form()
+	}
+	return false;
+}
+
+function blur_form() 
+{	document.form1.encrypt_num.blur()
+	br = false
+	setTimeout("br=true",1000)
+}
+
+function init()
+{	document.form1.encrypt_key1.value = 123456789012345
+	document.form1.encrypt_key2.value = 678901234567890
+	document.form1.encrypt_key3.value = 987654321098765
+	document.form1.encrypt_key4.value = 432109876543210
+}
+	
+// -->
+
+</SCRIPT>
+
+</HTML>

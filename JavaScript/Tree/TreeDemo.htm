@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Tree Demo</title>
+<style type="text/css">   a.treenode:link { color: black; text-decoration: none; font-weight: bold }
+   a.treenode:visited { color: black; text-decoration: none; font-weight: bold }
+   a.treemarker:link { color: red; text-decoration: none; font-weight: bold }
+   a.treemarker:visited { color: red; text-decoration: none; font-weight: bold }
+   blockquote.treenode { margin-right: 0; margin-top: 0; margin-bottom: 0 }
+</style>
+
+<SCRIPT language="JavaScript" src="tree.js"></SCRIPT>
+
+<SCRIPT language="JavaScript">
+   var tree = new Tree("tree", "t1")
+   n0 = new Node("Web Technologies","javascript:void(0)","",tree)
+   n1 = new Node("Client-Side Technologies","javascript:void(0)","",tree)
+   n2 = new Node("Server-Side Technologies","javascript:void(0)","",tree)
+//      .
+//      .
+//      .
+//   n26 = new Node("PHP: Hypertext Preprocessor","http://www.builder.com/Programming/PHPIntro/?tag=st.bl.3882.dir1.PHPIntro","external",tree)
+   tree.addNode(n0)
+   n0.addNode(n1)
+   n0.addNode(n2)
+//      .
+//      .
+//      .
+</SCRIPT>
+</head>
+
+<body onload="window.scroll(0,yoffset)">
+
+&nbsp;
+<SCRIPT language="JavaScript">
+   tree.loadState()
+   tree.display()
+</SCRIPT>
+<p>&nbsp;</p>
+<p>Now that you know how to create <font class="iCode" color="#006600">Tree</font> and <font class="iCode" color="#006600">Node</font> objects and use the <font class="iCode" color="#006600">addNode()</font>
+methods to assemble the nodes of a tree, you can use the following steps to create and deploy your own trees:</p>
+<p>&nbsp;
+<ol>
+  <li>Specify the CSS styles to be used with the tree nodes in your document's head:
+    <p><font class="bCode" color="#006600">&lt;STYLE type=&quot;text/css&quot;&gt; &nbsp;&nbsp;&nbsp;A.treenode:link { color: black; text-decoration: none;
+    font-weight: bold }<br>
+    &nbsp;&nbsp;&nbsp;A.treenode:visited { color: black; text-decoration: none; font-weight: bold }<br>
+    &nbsp;&nbsp;&nbsp;A.treemarker:link { color: red; text-decoration: none; font-weight: bold }<br>
+    &nbsp;&nbsp;&nbsp;A.treemarker:visited { color: red; text-decoration: none; font-weight: bold }<br>
+    &nbsp;&nbsp;&nbsp;BLOCKQUOTE.treenode {margin-top: 0; margin-bottom: 0; margin-right: 0 }<br>
+    &lt;/STYLE&gt;</font></p>
+    <p>&nbsp;</p>
+  <li>Reference the <a href="javascript:openWindow('tree.html','Win',true,600,500)">tree.js</a> file in your document's head:
+    <p><font class="bCode" color="#006600">&lt;SCRIPT language=&quot;JavaScript&quot; src=&quot;tree.js&quot;&gt;<br>
+    &lt;/SCRIPT&gt;</font></p>
+    <p>&nbsp;</p>
+  <li>Create your <font class="iCode" color="#006600">Tree</font> object and <font class="iCode" color="#006600">Node</font> objects as described in the
+    previous page. Add your <font class="iCode" color="#006600">Node</font> objects to the <font class="iCode" color="#006600">Tree</font> object and each other
+    using the <font class="iCode" color="#006600">addNode()</font> method. Modify this example to define and add your own tree nodes.
+    <p><font class="bCode" color="#006600">&lt;SCRIPT language=&quot;JavaScript&quot;&gt;<br>
+    &nbsp;&nbsp;&nbsp;var tree = new Tree(&quot;tree&quot;, &quot;t1&quot;)<br>
+    &nbsp;&nbsp;&nbsp;n0 = new Node(&quot;Web Technologies&quot;,&quot;javascript:void(0)&quot;,&quot;&quot;,tree)<br>
+    &nbsp;&nbsp;&nbsp;n1 = new Node(&quot;Client-Side Technologies&quot;,&quot;javascript:void(0)&quot;,&quot;&quot;,tree)<br>
+    &nbsp;&nbsp;&nbsp;n2 = new Node(&quot;Server-Side Technologies&quot;,&quot;javascript:void(0)&quot;,&quot;&quot;,tree)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+    &nbsp;&nbsp;&nbsp;n26 = new Node(&quot;PHP: Hypertext Preprocessor&quot;,&quot;http://www.builder.com/Programming/PHPIntro/?tag=st.bl.3882.dir1.PHPIntro&quot;,&quot;external&quot;,tree)<br>
+    &nbsp;&nbsp;&nbsp;tree.addNode(n0)<br>
+    &nbsp;&nbsp;&nbsp;n0.addNode(n1)<br>
+    &nbsp;&nbsp;&nbsp;n0.addNode(n2)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>
+    &nbsp;&nbsp;&nbsp;n24.addNode(n241)<br>
+    &nbsp;&nbsp;&nbsp;n24.addNode(n242)<br>
+    &lt;/SCRIPT&gt;</font></p>
+    <p>&nbsp;</p>
+  <li>Set your document's <font class="iCode" color="#006600">onload</font> event handler to <font class="iCode" color="#006600">window.scroll(0,yoffset)</font>:
+    <p><font class="bCode" color="#006600">&lt;BODY onload=&quot;window.scroll(0,yoffset)&quot;&gt;</font></p>
+    <p>&nbsp;</p>
+  <li>Use the following script in your document's body to display the tree:
+    <p>&nbsp;</p>
+    <p><font class="bCode" color="#006600">&lt;SCRIPT language=&quot;JavaScript&quot;&gt;<br>
+    &nbsp;&nbsp;&nbsp;tree.loadState()<br>
+    &nbsp;&nbsp;&nbsp;tree.display()<br>
+    &lt;/SCRIPT&gt;</font></p>
+  </li>
+</ol>
+That's all that you need to improve your site navigation with trees
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!-- TOOLBAR_START -->
+
+<!-- TOOLBAR_EXEMPT -->
+
+<!-- TOOLBAR_END -->
+
+
+<SCRIPT>
+var i;
+function longtime()
+{
+  i=0;
+  b1.style.cursor="wait";
+  b1.disabled=true; 
+  timedIterations(); 
+}
+
+function timedIterations()
+{
+   if (i<=500)
+   {
+      d1.innerText=i;	 
+      d2.style.width=i;
+      // following statements represents a calculation that takes some time
+      var j=0;		
+      while (j<=10000)
+       	j++;  
+      setTimeout("timedIterations();", 1);
+      i++;   
+   }
+   else
+   {
+        b1.style.cursor="";
+	b1.disabled=false; 
+   }
+}
+</SCRIPT>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body id="b1">
+
+<input id="ip1" type="BUTTON" onclick="longtime();" value="Click Me">
+<div id="d1">
+</div>
+<div id="d2" style="background-color:red">
+</div>
+
+</body>

@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+<title>How to Center A Layer</title>
+<meta content="text/html; charset=windows-1252" http-equiv="Content-Type">
+<SCRIPT>
+	
+function Is() {
+    var agent   = navigator.userAgent.toLowerCase();
+    this.major  = parseInt(navigator.appVersion);
+    this.minor  = parseFloat(navigator.appVersion);
+    this.ns     = ((agent.indexOf('mozilla')   != -1) &&
+                  (agent.indexOf('spoofer')    == -1) &&
+                  (agent.indexOf('compatible') == -1) &&
+                  (agent.indexOf('opera')      == -1) &&
+                  (agent.indexOf('webtv')      == -1));
+    this.ns4    = (this.ns && (this.major      ==  4));
+    this.ns6    = (this.ns && (this.major      >=  5));
+    this.ie     = (agent.indexOf("msie")       != -1);
+    this.ie3    = (this.ie && (this.major      <   4));
+    this.ie4  	= (this.ie && (this.major >= 4));
+    this.ie5    = (this.ie && (this.major      ==  4) &&
+                  (agent.indexOf("msie 5.0")   != -1));
+    this.ieX    = (this.ie && !this.ie3 && !this.ie4);
+}
+
+
+var is = new Is();
+	
+	function layerObject(id,left,top) {
+		if (is.ie5||is.ns6){
+		this.obj = document.getElementById(id).style;
+		this.obj.left = left;
+		this.obj.top = top;
+		return this.obj;
+		} else if(is.ie4) {
+		this.obj = document.all[id].style;
+		this.obj.left = left;
+		this.obj.top = top;
+		return this.obj;
+		} else if(is.ns4) {
+		this.obj = document.layers[id];
+		this.obj.left = left;
+		this.obj.top = top;
+		return this.obj;
+		}  
+}
+
+function layerSetup() {
+		centerLyr = new layerObject('centerLayer', available_width/2-100,available_height/2-12);
+		
+}
+	
+	</SCRIPT>
+
+<style type="text/css">.main        { color: #fbeed5; font-family: Georgia, 'Times New Roman', Times, serif; 
+               font-size: 16px; text-decoration: none }
+</style>
+<meta content="Microsoft FrontPage 4.0" name="GENERATOR">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+</head>
+
+<body bgcolor="#999999" leftmargin="0" onload="
+ if(is.ns4 ||is.ns6) {
+          available_width=innerWidth;
+          available_height=innerHeight;
+          layerSetup();
+	     } else if(is.ie4 || is.ie5) {
+          available_width=document.body.clientWidth;
+          available_height=document.body.clientHeight;
+          layerSetup();
+	     }" onresize="
+    if(is.ns4 ||is.ns6||is.ie4||is.ie5) {
+		history.go(0);
+        }" scroll="no" topmargin="0" marginheight="0" marginwidth="0">
+
+<div id="centerLayer" style="HEIGHT: 24px; LEFT: 0px; POSITION: absolute; TOP: 0px; VISIBILITY: visible; WIDTH: 200px; Z-INDEX: 6">
+  <span class="main">This is a Layer Centered By Screen Resolution</span>
+</div>
+
+</body>
+
+</html>
+<% rsScript.close
+set rsScript = nothing
+ %>

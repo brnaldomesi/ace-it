@@ -1,0 +1,90 @@
+HR {
+	COLOR: black
+}
+SELECT {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+INPUT {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma;
+}
+BODY {
+	FONT-SIZE: 10pt; FONT-FAMILY: Tahoma
+}
+MARQUEE {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+LEGEND {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+BUTTON {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+TEXTAREA {
+	FONT-SIZE: 8pt; FONT-FAMILY: Tahoma
+}
+.PE_TextBox {
+	BORDER-LEFT: #808080 1px solid; BORDER-TOP: #808080 1px solid; BORDER-RIGHT: #808080 1px solid; BORDER-BOTTOM: #808080 1px solid;
+	PADDING-RIGHT: 1px; PADDING-LEFT: 0.02in; PADDING-BOTTOM: 1px; PADDING-TOP: 1px;
+	COLOR: #000000;  
+	BACKGROUND-COLOR: #ffffff
+	FONT-WEIGHT: 400; FONT-SIZE: 8pt; 
+	FONT-STYLE: normal; FONT-FAMILY: Tahoma; 
+	WRITING-MODE: lr-tb; 
+    HEIGHT: 0.166in;
+	VISIBILITY: visible
+}
+.PE_AlignRight {
+  TEXT-ALIGN: right
+}
+
+.PE_SubmitButton {
+  font-weight: bold
+}
+
+.PE_CommandButton {
+	FONT-WEIGHT: Bold; FONT-SIZE: 8pt; 
+	FONT-STYLE: normal; FONT-FAMILY: Tahoma; 
+}
+
+.PE_TextArea {
+	BORDER-LEFT: #808080 1px solid; BORDER-TOP: #808080 1px solid; BORDER-RIGHT: #808080 1px solid; BORDER-BOTTOM: #808080 1px solid;
+	PADDING-RIGHT: 1px; PADDING-LEFT: 0.02in; PADDING-BOTTOM: 1px; PADDING-TOP: 1px;
+	COLOR: #000000;  
+	BACKGROUND-COLOR: #ffffff
+	FONT-WEIGHT: 400; FONT-SIZE: 8pt; 
+	FONT-STYLE: normal; FONT-FAMILY: Tahoma; 
+	WRITING-MODE: lr-tb; 
+	VISIBILITY: visible
+}
+.PE_Label {
+	BORDER-LEFT: #000000 1px; BORDER-TOP: #000000 1px; BORDER-RIGHT: #000000 1px; BORDER-BOTTOM: #000000 1px; 
+	PADDING-RIGHT: 1px; PADDING-LEFT: 0.02in; PADDING-BOTTOM: 1px; PADDING-TOP: 1px;
+	FONT-STYLE: normal; FONT-FAMILY: Arial; FONT-WEIGHT: 400; FONT-SIZE: 8pt; 
+	COLOR: #333399; 
+	BACKGROUND-COLOR: transparent
+	WRITING-MODE: lr-tb; 	
+	OVERFLOW: hidden;
+	VISIBILITY: visible
+}
+.PE_ComboBox {
+	BORDER-LEFT: #808080 1px solid; BORDER-TOP: #808080 1px solid; BORDER-RIGHT: #808080 1px solid; BORDER-BOTTOM: #808080 1px solid;
+	PADDING-RIGHT: 1px; PADDING-LEFT: 0.02in; PADDING-BOTTOM: 1px; PADDING-TOP: 1px;
+	COLOR: #000000;  
+	BACKGROUND-COLOR: #ffffff
+	FONT-WEIGHT: 400; FONT-SIZE: 8pt; 
+	FONT-STYLE: normal; FONT-FAMILY: Tahoma; 
+	WRITING-MODE: lr-tb; 
+	VISIBILITY: visible
+}
+.PE_Hidden {
+    VISIBILITY: hidden
+}
+.PE_Visible {
+    VISIBILITY: visible
+}
+.PE_MenuText {
+  font-family: Tahoma;
+  font-size: 10pt;
+  font-weight: bold;
+  text-decoration: none  
+}
