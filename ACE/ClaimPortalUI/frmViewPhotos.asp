@@ -74,8 +74,8 @@
 %> 
 <table style="float: left; border-collapse: collapse" cellpadding="0" cellspacing="0">
   <caption align="bottom" valign="bottom"><font face="Arial" size="2">
-  <a style="text-decoration: none;" title="Click to download this photo to your system" href="http://webportal.staging-portal.ace-it.com/photo/download?file=<%=Server.URLEncode(rs("PhotoFileSpec"))%>"><img border="0" src="../Images/dwn.GIF"></a> Photo <%=i%></font></caption>
-  <tr><td><a href="#Photo<%=i%>"><img border="3" src="http://webportal.staging-portal.ace-it.com/photo?file=<%=Server.URLEncode(rs("PhotoFileSpec"))%>" width="100" hspace="4" vspace="4"></a></td></tr>
+  <a style="text-decoration: none;" title="Click to download this photo to your system" href="http://webportal.ace-it.com/photo/download?file=<%=Server.URLEncode(rs("PhotoFileSpec"))%>"><img border="0" src="../Images/dwn.GIF"></a> Photo <%=i%></font></caption>
+  <tr><td><a href="#Photo<%=i%>"><img border="3" src="http://webportal.ace-it.com/photo?file=<%=Server.URLEncode(rs("PhotoFileSpec"))%>" width="100" hspace="4" vspace="4"></a></td></tr>
 </table>
 <%  rs.MoveNext
     i=i+1
@@ -91,8 +91,8 @@
   Do While Not rs.EOF 
   'Response.Write rs("PhotoFileSpec")
 %> <br>
-<a name="Photo<%=i%>"></a>Photo <%=i%>: <a style="text-decoration: none;" title="Click to download this photo to your system" href="http://webportal.staging-portal.ace-it.com/photo/download?file=<%=Server.URLEncode(rs("PhotoFileSpec"))%>"><img border="0" src="../Images/dwn.GIF"></a> <br>
-<img border="0" src="http://webportal.staging-portal.ace-it.com/photo?file=<%=Server.URLEncode(rs("PhotoFileSpec"))%>"> <hr>
+<a name="Photo<%=i%>"></a>Photo <%=i%>: <a style="text-decoration: none;" title="Click to download this photo to your system" href="http://webportal.ace-it.com/photo/download?file=<%=Server.URLEncode(rs("PhotoFileSpec"))%>"><img border="0" src="../Images/dwn.GIF"></a> <br>
+<img border="0" src="http://webportal.ace-it.com/photo?file=<%=Server.URLEncode(rs("PhotoFileSpec"))%>"> <hr>
 <%  rs.MoveNext
     i=i+1
   Loop

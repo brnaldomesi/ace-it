@@ -47,9 +47,9 @@
       '--- Fetch Report PDF ---
       Response.Clear
       Dim ReportSpec 
-      'ReportSpec = "http://webportal.staging-portal.ace-it.com/en2/" & EncStr("Report/" & Request.Form("lstReport") & "/" & sCompany & "/" & Replace(Request.Form("txtDateStart"),"/","-") & "/" & Replace(Request.Form("txtDateEnd"),"/","-") & "/" & sOffice, 1) & "/rpt" & Int(Rnd() * 10000) & ".pdf"
-      ReportSpec = "http://webportal.staging-portal.ace-it.com/" & "Report/" & Request.Form("lstReport") & "/" & sCompany & "/" & Replace(Request.Form("txtDateStart"),"/","-") & "/" & Replace(Request.Form("txtDateEnd"),"/","-") & "/" & sOffice & "/rpt" & Int(Rnd() * 10000) & ".pdf"
-      'ReportSpec = "http://webportal.staging-portal.ace-it.com/test"
+      'ReportSpec = "http://webportal.ace-it.com/en2/" & EncStr("Report/" & Request.Form("lstReport") & "/" & sCompany & "/" & Replace(Request.Form("txtDateStart"),"/","-") & "/" & Replace(Request.Form("txtDateEnd"),"/","-") & "/" & sOffice, 1) & "/rpt" & Int(Rnd() * 10000) & ".pdf"
+      ReportSpec = "http://webportal.ace-it.com/" & "Report/" & Request.Form("lstReport") & "/" & sCompany & "/" & Replace(Request.Form("txtDateStart"),"/","-") & "/" & Replace(Request.Form("txtDateEnd"),"/","-") & "/" & sOffice & "/rpt" & Int(Rnd() * 10000) & ".pdf"
+      'ReportSpec = "http://webportal.ace-it.com/test"
       Response.Redirect ReportSpec    
 
     End If
@@ -180,9 +180,9 @@ function FrmReports_Validator(theForm)
 		}
 		strCode = "";
 		
-		var remoteServer = "http://webportal.staging-portal.ace-it.com/Admin/CoOffList/" + InsCoName + "/";
+		var remoteServer = "http://webportal.ace-it.com/Admin/CoOffList/" + InsCoName + "/";
 		if (document.getElementById('chkShowACEOfficeCodes').checked == true) 
-			remoteServer = "http://webportal.staging-portal.ace-it.com/Admin/CoOffListWithACECode/" + InsCoName + "/";
+			remoteServer = "http://webportal.ace-it.com/Admin/CoOffListWithACECode/" + InsCoName + "/";
 		
 		var head = document.getElementsByTagName('head').item(0);
 		var old  = document.getElementById('jsLoadOffices');
@@ -237,7 +237,7 @@ function FrmReports_Validator(theForm)
   <tr>
     <td align="left" width="100%">
     <!--<form method="POST" target="_blank" name="frmReports" action="frmMain.asp?t=<%=mActiveTab%>&txtState=1" onsubmit="return FrmReports_Validator(this)">-->
-    <form method="POST" target="_blank" name="frmReports" action="http://webportal.staging-portal.ace-it.com/ReportEx" onsubmit="return FrmReports_Validator(this)">
+    <form method="POST" target="_blank" name="frmReports" action="http://webportal.ace-it.com/ReportEx" onsubmit="return FrmReports_Validator(this)">
       <input type="hidden" name="txtUserCompanyName" value="<%=mUserInsCoName%>"><input type="hidden" name="txtUserOfficeName" value="<%=mUserACEInsCoOfficeName%>">
       <table border="0" cellspacing="3" width="100%" cellpadding="3">
 <!--        <tr>
@@ -272,7 +272,7 @@ function FrmReports_Validator(theForm)
         <tr>
           <td align="right" class="styLabelCell" width="33%">Select Company:</td>
           <td width="66%"><select size="5" id="lstCompany" name="lstCompany" onchange="Javascript: void(Load_lstOfficesScript());" style="font-family: Courier New, Courier New (monospace), Lucida Console, Courier, monospace;">            
-				<script language="JavaScript" src="http://webportal.staging-portal.ace-it.com/Admin/CoList/">document.write("<br>Database server did not respond<br>");</script>
+				<script language="JavaScript" src="http://webportal.ace-it.com/Admin/CoList/">document.write("<br>Database server did not respond<br>");</script>
 				<script language="JavaScript">
 					//build control and and set default to current company
 					document.write(strCode.replace(/<option selected value="0">/i, '<option value="0">')

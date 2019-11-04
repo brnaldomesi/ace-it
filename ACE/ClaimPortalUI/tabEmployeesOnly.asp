@@ -1,13 +1,13 @@
 <% If mActiveTab = "" Then response.redirect "http://www.staging-portal.ace-it.com/" %> <% 
   If Request.QueryString("a") <> "" Then 
-    AuditSpec = "http://webportal.staging-portal.ace-it.com/en2/" & EncStr("AuditPDF/ACEEstID/" & Request.QueryString("a") & "/.pdf", 1) & Request.QueryString("a") & ".pdf" '& Int(Rnd() * 10000) & ".pdf"     
+    AuditSpec = "http://webportal.ace-it.com/en2/" & EncStr("AuditPDF/ACEEstID/" & Request.QueryString("a") & "/.pdf", 1) & Request.QueryString("a") & ".pdf" '& Int(Rnd() * 10000) & ".pdf"     
     Response.Clear
     Response.Redirect AuditSpec
     
    ElseIf Request.QueryString("c") <> "" Then 
     sOffice = mUserACEInsCoOfficeName
     If (mUserSecurityL >= 5) OR (mUserTypeID) = cMemberType_CoMgr Then sOffice = ""
-    AuditSpec = "http://webportal.staging-portal.ace-it.com/en2/" & EncStr("AuditPDF/ClaimNo/" & mUserInsCoName & "/" & sOffice & "/" & Request.QueryString("c") & "/", 1) & Request.QueryString("c") & ".pdf" '& Int(Rnd() * 10000) & ".pdf"
+    AuditSpec = "http://webportal.ace-it.com/en2/" & EncStr("AuditPDF/ClaimNo/" & mUserInsCoName & "/" & sOffice & "/" & Request.QueryString("c") & "/", 1) & Request.QueryString("c") & ".pdf" '& Int(Rnd() * 10000) & ".pdf"
     Response.Clear
     Response.Redirect AuditSpec
   End If
@@ -53,7 +53,7 @@ function tabEmpViewStatus() {
         <td align="right"><font face="Verdana" size="2"><b>&nbsp;</b></font></td>
         <td width="100%">
         <p align="left"><a href="frmRetrieveFileAttachments.asp">View Claim Submission Attachments</a>&nbsp; <br>
-        <a target="_blank" href="http://webportal.staging-portal.ace-it.com/en2/<%=EncStr("bsntest/" & mUserName, 2)%>">BSN Test Site </a>&nbsp;<!--
+        <a target="_blank" href="http://webportal.ace-it.com/en2/<%=EncStr("bsntest/" & mUserName, 2)%>">BSN Test Site </a>&nbsp;<!--
             <a href="javascript:void(window.open('frmMembers_List.asp','Members','height=200,width=500,top='+(screen.width-500)/2+',left='+(screen.height-200)/2));">
             <font face="Verdana" size="1">View Member List</font></a>
             --> </p>

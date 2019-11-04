@@ -21,7 +21,7 @@ Const MemberType_ACEAuditor = 6
 Const MemberType_ACEClerical = 7
 Const MemberType_ACEAdmin = 8
 
-Private Const PSSWebServIP = "webportal.staging-portal.ace-it.com" '"webportal.staging-portal.ace-it.com" ' "64.221.61.162"
+Private Const PSSWebServIP = "webportal.ace-it.com" '"webportal.ace-it.com" ' "64.221.61.162"
 
 Private Const SQLSvrIP = "sql.ace-it.com" 
 'Private Const SQLSvrPort = "56102"

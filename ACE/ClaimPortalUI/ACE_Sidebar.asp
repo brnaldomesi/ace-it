@@ -96,7 +96,7 @@ function OpenTutorial(sDoc) {
     <td width="100%"><font size="5">&nbsp;</font></td>
   </tr>
   <tr>
-    <td width="100%" align="center"><a class="Link" target="_blank" href="http://webportal.staging-portal.ace-it.com/en2/<%=EncStr("bsn/" & mUserName, 2)%>">
+    <td width="100%" align="center"><a class="Link" target="_blank" href="http://webportal.ace-it.com/en2/<%=EncStr("bsn/" & mUserName, 2)%>">
     <img border="0" src="images/BodyShopNet_smaller.gif" width="139" height="72"></a><br><font size="1"><br>
     </font>
     <font color="#0057A6" face="Arial" size="1">
@@ -107,7 +107,7 @@ function OpenTutorial(sDoc) {
   <tr>
     <td width="100%" align="left">
     <img height="12" src="../Images/arrow_05.gif" width="13">
-    <a class="Link" target="_blank" href="http://webportal.staging-portal.ace-it.com/en2/<%=EncStr("bsn/" & mUserName, 2)%>">Make an Assignment</a>
+    <a class="Link" target="_blank" href="http://webportal.ace-it.com/en2/<%=EncStr("bsn/" & mUserName, 2)%>">Make an Assignment</a>
     <img height="12" src="../Images/arrow_05.gif" width="13"> 
     <a class="Link" target="_blank" href="http://BodyShopNet.com/">About BodyShopNet</a>
     </td>

@@ -228,7 +228,7 @@ ShowLoading()
              ' mrs.Close
             %>
             
-<script language="JavaScript" src="http://webportal.staging-portal.ace-it.com/Admin/CoList/">document.write("<br>Database server did not respond<br>");</script>
+<script language="JavaScript" src="http://webportal.ace-it.com/Admin/CoList/">document.write("<br>Database server did not respond<br>");</script>
 <script language="JavaScript">document.write(strCode);</script>
           
             </select> <input type="button" value="Next &gt;&gt;" name="cmdNext" onclick="NextStep(document.forms[0].cmbCompany, 1);"></td>
@@ -243,7 +243,7 @@ ShowLoading()
         <tr>
           <!-- <td width="100%" align="center"><select size="1" name="cmbOffice" onchange="NextStep(this, 2);"> -->
           <td width="100%" align="center"><select size="5" name="cmbOffice">
-<script language="JavaScript" src="http://webportal.staging-portal.ace-it.com/Admin/CoOffList/<%=mSelectedCo%>/">document.write("<br>Database server did not respond<br>");</script>
+<script language="JavaScript" src="http://webportal.ace-it.com/Admin/CoOffList/<%=mSelectedCo%>/">document.write("<br>Database server did not respond<br>");</script>
 <script language="JavaScript">document.write(strCode);</script>
             </select> <input type="button" value="Next &gt;&gt;" name="cmdNext" onclick="NextStep(document.forms[0].cmbOffice, 2);"></td>
         </tr>
@@ -257,7 +257,7 @@ ShowLoading()
         <tr>
           <!-- <td width="100%" align="center"><select size="1" name="cmbRep" onchange="NextStep(this, 3);"> -->
           <td width="100%" align="center"><select size="5" name="cmbRep">
-<script language="JavaScript" src="http://webportal.staging-portal.ace-it.com/Admin/Reps/<%=mSelectedCo & "/" & mSelectedOffice%>/">document.write("<br>Database server did not respond<br>");</script>
+<script language="JavaScript" src="http://webportal.ace-it.com/Admin/Reps/<%=mSelectedCo & "/" & mSelectedOffice%>/">document.write("<br>Database server did not respond<br>");</script>
 <script language="JavaScript">document.write(strCode);</script>
             </select> <input type="button" value="Next &gt;&gt;" name="cmdNext" onclick="NextStep(document.forms[0].cmbRep, 3);"></td>
         </tr>

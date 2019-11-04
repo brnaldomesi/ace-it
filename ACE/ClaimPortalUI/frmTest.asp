@@ -9,7 +9,7 @@
 
 <body>
 
-<form method="POST" name="fmMain" action="http://webportal.staging-portal.ace-it.com/echo" enctype="multipart/form-data">
+<form method="POST" name="fmMain" action="http://webportal.ace-it.com/echo" enctype="multipart/form-data">
   <p><input type="text" name="T1" size="20"><br>
   <input type="file" name="F1" size="20"></p>
   <p>&nbsp;</p>

@@ -45,7 +45,7 @@ End Sub
 <%
   If mState=0 Then
     'Response.Clear
-    'Response.Redirect "http://webportal.staging-portal.ace-it.com/en2/" & EncStr("AuditPDF/ACEEstID/" & Request.QueryString("EstID") & ".pdf", 1) & "/" & Request.QueryString("EstID") & ".pdf"
+    'Response.Redirect "http://webportal.ace-it.com/en2/" & EncStr("AuditPDF/ACEEstID/" & Request.QueryString("EstID") & ".pdf", 1) & "/" & Request.QueryString("EstID") & ".pdf"
 %>
  <p align="center"><font color="#808000" size="4">... Your document request is being processed please wait ...</font></p>
 
@@ -62,7 +62,7 @@ End Sub
 		Response.End
 	End If
     
-    url = "http://webportal.staging-portal.ace-it.com/en/" & EncStr("AuditPDF/ACEEstID/" & EstID & ".pdf", 1) & "/" & Request.QueryString("EstID") & ".pdf" 
+    url = "http://webportal.ace-it.com/en/" & EncStr("AuditPDF/ACEEstID/" & EstID & ".pdf", 1) & "/" & Request.QueryString("EstID") & ".pdf" 
  
     
     set xmlhttp = CreateObject("MSXML2.ServerXMLHTTP") 
@@ -76,12 +76,12 @@ End Sub
  
  
 <form name="frmPDF" method="POST" 
-action="<%="http://webportal.staging-portal.ace-it.com/en/" & EncStr("AuditPDF/ACEEstID/" & Request.QueryString("EstID") & ".pdf", 1) & "/" & Request.QueryString("EstID") & ".pdf"%>" >
+action="<%="http://webportal.ace-it.com/en/" & EncStr("AuditPDF/ACEEstID/" & Request.QueryString("EstID") & ".pdf", 1) & "/" & Request.QueryString("EstID") & ".pdf"%>" >
   <input type = "hidden" size="20">
 </form>
 <script language="JavaScript">
  window.title="ACE"
- //window.location.replace("<%="http://webportal.staging-portal.ace-it.com/en/" & EncStr("AuditPDF/ACEEstID/" & Request.QueryString("EstID") & ".pdf", 1) & "/" & Request.QueryString("EstID") & ".pdf"%>");
+ //window.location.replace("<%="http://webportal.ace-it.com/en/" & EncStr("AuditPDF/ACEEstID/" & Request.QueryString("EstID") & ".pdf", 1) & "/" & Request.QueryString("EstID") & ".pdf"%>");
  document.frmPDF.submit();
 </script>
 <%

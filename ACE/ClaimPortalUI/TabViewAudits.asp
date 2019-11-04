@@ -15,7 +15,7 @@ AuditNewWin = -1
   If Request.QueryString("a") <> "" Then 
     '--- Fetch Audit PDF ---
     Dim AuditSpec 
-    AuditSpec = "http://webportal.staging-portal.ace-it.com/en2/" & EncStr("AuditPDF/ACEEstID/" & Request.QueryString("a") & "/.pdf", 1) & Request.QueryString("a") & ".pdf" '& Int(Rnd() * 10000) & ".pdf"     
+    AuditSpec = "http://webportal.ace-it.com/en2/" & EncStr("AuditPDF/ACEEstID/" & Request.QueryString("a") & "/.pdf", 1) & Request.QueryString("a") & ".pdf" '& Int(Rnd() * 10000) & ".pdf"     
     Response.Clear
     Response.Redirect AuditSpec
     
@@ -23,7 +23,7 @@ AuditNewWin = -1
     '--- Fetch Audit PDF for claim # ---
     sOffice = mUserACEInsCoOfficeName
     If (mUserSecurityL >= 5) OR (mUserTypeID) = cMemberType_CoMgr Then sOffice = ""
-    AuditSpec = "http://webportal.staging-portal.ace-it.com/en2/" & EncStr("AuditPDF/ClaimNo/" & mUserInsCoName & "/" & sOffice & "/" & Request.QueryString("c") & "/", 1) & Request.QueryString("c") & ".pdf" '& Int(Rnd() * 10000) & ".pdf"
+    AuditSpec = "http://webportal.ace-it.com/en2/" & EncStr("AuditPDF/ClaimNo/" & mUserInsCoName & "/" & sOffice & "/" & Request.QueryString("c") & "/", 1) & Request.QueryString("c") & ".pdf" '& Int(Rnd() * 10000) & ".pdf"
     Response.Clear
     Response.Redirect AuditSpec
   End If
