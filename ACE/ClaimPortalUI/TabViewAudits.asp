@@ -101,7 +101,7 @@ function DofrmClaimNumFind() {
             </table>
             </td>
           </tr>
-		  <% If Not isHTTPS Then %>
+		  <% If false Then %>
           <tr>
             <td>&nbsp;</td>
             <td>

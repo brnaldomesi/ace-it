@@ -295,7 +295,7 @@ function FrmReports_Validator(theForm)
           <input type="checkbox" id="chkShowACEOfficeCodes" name="chkShowACEOfficeCodes" value="ON" onclick="Javascript: void(Load_lstOfficesScript());"><font face="Arial" size="1" color="#808080">Show ACE office codes</font>
 			&nbsp;</td>
           <td width="66%"><select size="5" id="lstOffices" name="lstOffices" multiple style="font-family: Courier New, Courier New (monospace), Lucida Console, Courier, monospace;">
-				<script language="JavaScript" src="http://webportal.staging-portal.ace-it.com/Admin/CoOffList/<%=mUserInsCoName%>/">document.write("<br>Database server did not respond<br>");</script>
+				<script language="JavaScript" src="http://webportal.ace-it.com/Admin/CoOffList/<%=mUserInsCoName%>/">document.write("<br>Database server did not respond<br>");</script>
 				<script language="JavaScript">document.write(strCode);</script>
             </select></td>
         </tr>
