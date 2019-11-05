@@ -284,7 +284,7 @@ function FrmReports_Validator(theForm)
         
 		<!-- !!! When changes are made to the row below copy them to the co mgr case also -->
 	<%Private Function fOfficeSelection
-		If Not isHTTPS Then
+		If false Then
 	%>
         <tr>
           <td align="right" class="styLabelCell" width="33%">Include Office(s):<br>
