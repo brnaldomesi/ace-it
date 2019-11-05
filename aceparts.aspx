@@ -39,7 +39,7 @@
                 Fax or email requests received after 6 PM Eastern Time will be processed the following business day.
             </p>
             <p>
-                <script>genMailToLink("info", "staging-portal.ace-it.com", "Contact us");</script> today about getting started!
+                <script>genMailToLink("info", "ace-it.com", "Contact us");</script> today about getting started!
             </p>
         </div>
     </div>

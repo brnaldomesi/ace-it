@@ -40,7 +40,7 @@
                 <br/>
                 Fax: 610-429-3131
                 <br/>
-                Email: <script>genMailToLink("info", "staging-portal.ace-it.com", "<span><img src=\"images/info-ace-it-com.png\"></span>");</script>
+                Email: <script>genMailToLink("info", "ace-it.com", "<span><img src=\"images/info-ace-it-com.png\"></span>");</script>
             </p>
         </div>
     </div>

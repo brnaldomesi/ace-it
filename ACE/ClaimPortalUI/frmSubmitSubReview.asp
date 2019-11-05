@@ -382,7 +382,7 @@ End Sub
       rsClaim("ClaimBody") = sBody & VBCrLf & sAttachments
       rsClaim("ClaimNum") = sClaimNum
       rsClaim("SubmittedBy") =  oUpload.Form("Submitted_By").value 
-	  rsClaim("EmailTo") = "subro@staging-portal.ace-it.com"
+	  rsClaim("EmailTo") = "subro@ace-it.com"
     rsClaim.Update  '--- Do update here to make sure we get record in case there's an issue with the attachments
     rsClaim.MoveFirst
       
@@ -431,7 +431,7 @@ End Sub
       .sHeader = "SubReview Claim Submission Form."
       .sFooter = ""
 
-      .sFrom = "ACEPortal@staging-portal.ace-it.com" '<--- no spaces
+      .sFrom = "ACEPortal@ace-it.com" '<--- no spaces
       .sTo = "aceitweb@comcast.net"
       .sSubject = "ACE-IT Portal, Claim Submission Form"
 	End With

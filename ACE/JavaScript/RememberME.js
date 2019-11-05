@@ -87,15 +87,15 @@ function RememberMe (f) {
     //ExpireDate = FixCookieDate(ExpireDate);  // don't need since time doesn't need to be exact
 	ExpireDate.setTime (ExpireDate.getTime() + (90 * 24 * 60 * 60 * 1000)); // 90 days from now 
     
-    Set_Cookie('txtUserName', f.txtUserName.value, ExpireDate, '/', '.staging-portal.ace-it.com', '');
-    Set_Cookie('txtPassword', f.txtPassword.value, ExpireDate, '/', '.staging-portal.ace-it.com', '');
-    Set_Cookie('chkRememberMe', f.RememberMe.value, ExpireDate, '/', '.staging-portal.ace-it.com', '');
+    Set_Cookie('txtUserName', f.txtUserName.value, ExpireDate, '/', '.ace-it.com', '');
+    Set_Cookie('txtPassword', f.txtPassword.value, ExpireDate, '/', '.ace-it.com', '');
+    Set_Cookie('chkRememberMe', f.RememberMe.value, ExpireDate, '/', '.ace-it.com', '');
 }
 
 function ForgetMe (f) {
-    Delete_Cookie('txtUserName', '/', '.staging-portal.ace-it.com');
-    Delete_Cookie('txtPassword', '/', '.staging-portal.ace-it.com');
-    Delete_Cookie('chkRememberMe', '/', '.staging-portal.ace-it.com');
+    Delete_Cookie('txtUserName', '/', '.ace-it.com');
+    Delete_Cookie('txtPassword', '/', '.ace-it.com');
+    Delete_Cookie('chkRememberMe', '/', '.ace-it.com');
     f.txtUserName.value = '';
     f.txtPassword.value = '';
     f.RememberMe.value = '';

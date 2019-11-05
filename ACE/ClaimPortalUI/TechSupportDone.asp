@@ -16,7 +16,7 @@
   oFormMailer.sHeader = "Form: ACE Claim Rep Portal WEB Site Support"
   oFormMailer.sFooter = "Form mailer created by PUPPO ENGINEERING, (C) 2001 - 2008"
 
-  oFormMailer.sFrom = "aceitweb@comcast.net" '"ClaimRepPortal@staging-portal.ace-it.com" '<--- no spaces
+  oFormMailer.sFrom = "aceitweb@comcast.net" '"ClaimRepPortal@ace-it.com" '<--- no spaces
   oFormMailer.sTo = "aceitweb@comcast.net" '"bob@puppozone.com" '"bpuppo@voicenet.com"
   oFormMailer.sSubject = "Claim Portal WEB Site Support Issue"
   'oFormMailer.sImportance = 2 'high

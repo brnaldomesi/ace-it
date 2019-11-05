@@ -267,7 +267,7 @@ sRowTemplate = _
 <tr><td>
 
 <hr>
-<p><font size="1" color="#666633">Unless otherwise noted all content �<a href="http://wwstaging-portal.ace-it.comom">AMERICAN COMPUTER ESTIMATING, INC.</a><br>
+<p><font size="1" color="#666633">Unless otherwise noted all content �<a href="http://wwace-it.comom">AMERICAN COMPUTER ESTIMATING, INC.</a><br>
 Website design, programs and web code �<a href="http://www.puppozone.com/">Anthony Puppo, LLC.</a><br>
 All Rights Reserved. <br>
 Last modified:

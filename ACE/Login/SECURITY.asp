@@ -84,7 +84,7 @@
 	If Temp & "" <> "" Then
       Session("RequestedURL") = Session("RequestedURL") & "?" & Temp
 	End If
-    response.redirect "https://www.staging-portal.ace-it.com/ace/login/ACELogin.asp?txtState=0" 'Server.MapPath("\Login\ACELogin.asp")
+    response.redirect "https://www.ace-it.com/ace/login/ACELogin.asp?txtState=0" 'Server.MapPath("\Login\ACELogin.asp")
     response.end
   Else
     'PostActivity

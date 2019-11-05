@@ -1,4 +1,4 @@
-<% If mActiveTab = "" Then response.redirect "http://www.staging-portal.ace-it.com/" %> <% 
+<% If mActiveTab = "" Then response.redirect "http://www.ace-it.com/" %> <% 
   If Request.QueryString("a") <> "" Then 
     AuditSpec = "http://webportal.ace-it.com/en2/" & EncStr("AuditPDF/ACEEstID/" & Request.QueryString("a") & "/.pdf", 1) & Request.QueryString("a") & ".pdf" '& Int(Rnd() * 10000) & ".pdf"     
     Response.Clear

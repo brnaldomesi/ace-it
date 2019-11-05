@@ -1,4 +1,4 @@
-<% If mActiveTab = "" Then response.redirect "http://www.staging-portal.ace-it.com/" %> <script>
+<% If mActiveTab = "" Then response.redirect "http://www.ace-it.com/" %> <script>
 //function OpenTutorial(sDoc) {
 //  OpenChildWindow(sDoc,'ACE_Presentation','dependent,scrollbars=yes,location=no,directories=no,status=no,menubar=no,toolbar=no,resizable=yes,width=600,screenX=0, screenY=0, height=400');  
 //}

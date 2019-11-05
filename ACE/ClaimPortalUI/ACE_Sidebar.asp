@@ -132,7 +132,7 @@ function OpenTutorial(sDoc) {
         Web Site design, programs and web code Copyright � <a href="http://www.puppozone.com/">PUPPO SOFTWARE SOLUTIONS, LLC.</a>&nbsp;&nbsp; All Rights Reserved.<br>
       <br>
         Send mail to <br>
-      <a href="mailto:support@staging-portal.ace-it.com?subject=Regarding the ACE-IT Website">support@staging-portal.ace-it.com</a> with questions or comments about this site.</font></tr>
+      <a href="mailto:support@ace-it.com?subject=Regarding the ACE-IT Website">support@ace-it.com</a> with questions or comments about this site.</font></tr>
   </table>
 </div>
 

@@ -37,7 +37,7 @@
                     <li>Paperless submissions and returns available</li>
                     <li>Lower rental and storage charges</li>
 					<li>Reduce payout and expense</li>
-					<li>Reports online at <a href="https://www.staging-portal.ace-it.com">www.staging-portal.ace-it.com</a></li>
+					<li>Reports online at <a href="https://www.ace-it.com">www.ace-it.com</a></li>
                 </ul>
             </p>
         </div>

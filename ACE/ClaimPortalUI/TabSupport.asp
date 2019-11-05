@@ -1,4 +1,4 @@
-<% If mActiveTab = "" Then response.redirect "http://www.staging-portal.ace-it.com/" %>
+<% If mActiveTab = "" Then response.redirect "http://www.ace-it.com/" %>
 <table width="493" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse" bordercolor="#111111">
   <tr>
     <td width="100%"><br>

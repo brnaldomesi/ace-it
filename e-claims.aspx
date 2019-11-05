@@ -46,7 +46,7 @@
                 <i>OR</i> ...
             </p>
             <p>
-                Enter your claim data directly on staging-portal.ace-it.com and we will:
+                Enter your claim data directly on ace-it.com and we will:
                 <ul>
                     <li>Return the audits by email, or you can</li>
                     <li>Retrieve them from our site.</li>

@@ -27,7 +27,7 @@
         <div style="font-size: 14px">
             <br/>
             <p>
-                Submit all resumes to <a href="mailto:careers@staging-portal.ace-it.com">careers@staging-portal.ace-it.com</a>.
+                Submit all resumes to <a href="mailto:careers@ace-it.com">careers@ace-it.com</a>.
             </p>
             <br/>
             <p>
@@ -35,9 +35,9 @@
             </p>
             <p>
                 <ul>
-                    <li><a href="//www.staging-portal.ace-it.com/downloads/Auto%20Auditor.pdf" download>Auto Auditor</a></li>
-                    <li><a href="//www.staging-portal.ace-it.com/downloads/Auditor%20in%20Training.pdf" download>Auditor in Training</a></li>
-                    <li><a href="//www.staging-portal.ace-it.com/downloads/Customer%20Service%20Rep.pdf" download>Customer Service Representative</a></li>
+                    <li><a href="//www.ace-it.com/downloads/Auto%20Auditor.pdf" download>Auto Auditor</a></li>
+                    <li><a href="//www.ace-it.com/downloads/Auditor%20in%20Training.pdf" download>Auditor in Training</a></li>
+                    <li><a href="//www.ace-it.com/downloads/Customer%20Service%20Rep.pdf" download>Customer Service Representative</a></li>
                 </ul>
             </p>
             <br/>

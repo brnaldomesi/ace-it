@@ -241,7 +241,7 @@ click the back button and resubmit your request.</font></p>
       rsClaim("ClaimBody") = sBody & VBCrLf & sAttachments
       rsClaim("ClaimNum") = sClaimNum
       rsClaim("SubmittedBy") =  oUpload.Form("Submitted_By").value 
-	  rsClaim("EmailTo") = "subro@staging-portal.ace-it.com"
+	  rsClaim("EmailTo") = "subro@ace-it.com"
     rsClaim.Update  '--- Do update here to make sure we get record in case there's an issue with the attachments
     rsClaim.MoveFirst
       

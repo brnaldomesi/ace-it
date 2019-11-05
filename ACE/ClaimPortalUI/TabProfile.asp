@@ -14,7 +14,7 @@ function profileValidate(frm) {
 }
 </script>
 
-<% If mActiveTab = "" Then response.redirect "http://www.staging-portal.ace-it.com/" %> 
+<% If mActiveTab = "" Then response.redirect "http://www.ace-it.com/" %> 
 <%
   Dim CoName, SubmittedBy, OfficeID, OfficeName
   Dim PhoneAc, PhoneExchg, PhoneL4, PhoneEx
@@ -126,7 +126,7 @@ function profileValidate(frm) {
       	  		 '"This member has requested the following changes:" & vbcrlf & _
       	  		 'sMsgChanged & vbcrlf
         '.sFooter = ""
-        '.sFrom = "aceitweb@comcast.net" '"ACEPortal@staging-portal.ace-it.com" '<--- no spaces
+        '.sFrom = "aceitweb@comcast.net" '"ACEPortal@ace-it.com" '<--- no spaces
         '.sTo = "aceitweb@comcast.net"
         '.sSubject = "ACE-IT Portal, Profile Change Request"
         '.BuildBody

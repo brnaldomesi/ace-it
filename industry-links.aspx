@@ -40,7 +40,7 @@
             <table width="100%" id="industry-links-table">
 		        <tr>
 					<td><a href="http://www.cccis.com/" target="_blank"><img src="images/ccclogo.png" /></a></td>
-					<td><a href="https://www.staging-portal.ace-it.com/" target="_blank"><img src="images/photoquote.png" width="40%" height="40%"/></a></td>
+					<td><a href="https://www.ace-it.com/" target="_blank"><img src="images/photoquote.png" width="40%" height="40%"/></a></td>
 		        </tr>
 				<tr>
 					<td><a href="http://www.i-car.com/" target="_blank"><img src="images/i-car.png" /></a></td>

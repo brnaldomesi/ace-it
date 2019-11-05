@@ -48,7 +48,7 @@
                     <div class="form-group text-center">
                         <div class="col-md-10 col-md-offset-2">
                             <b>
-                                A message containing your password will be sent to the email address that you provided when you created your staging-portal.ace-it.com account.
+                                A message containing your password will be sent to the email address that you provided when you created your ace-it.com account.
                             </b>
                         </div>
                     </div>

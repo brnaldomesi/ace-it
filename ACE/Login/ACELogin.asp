@@ -108,7 +108,7 @@ END SUB
     Response.Cookies("chkRememberMe").Path = "/"            
     Response.Cookies("txtUserName").Path = "/"            
     Response.Cookies("txtPassword").Path = "/"            
-    'Response.Cookies("name").Domain = ".staging-portal.ace-it.com"
+    'Response.Cookies("name").Domain = ".ace-it.com"
     '--- end cookies ---
         
     Set oDataConn = New clsACEDataConn
@@ -319,12 +319,12 @@ function FrontPage_Form1_Validator(theForm)
                             <p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><font #800000"" color="#800000">Your information is on file but your
                             account is not activated.</font></b><font color #800000""> </font><b>You must click the link in your confirmation Email to enable
                             your account. If it has been more than 48 hours since you signed up and you have not received your confirmation Email please contact
-                            <a href="mailto:support@staging-portal.ace-it.com">Support@staging-portal.ace-it.com</a></b></font></p>
+                            <a href="mailto:support@ace-it.com">Support@ace-it.com</a></b></font></p>
                             <%
       Case 4
                             %>
                             <p style="margin-top: 0; margin-bottom: 0"><font size="2"><b><font #800000"" color="#800000">Your information is on file but your
-                            account is disabled</font><font #800000""><font color="#800000">.</font></font> Please contact <a href="mailto:support@staging-portal.ace-it.com">Support@staging-portal.ace-it.com</a>
+                            account is disabled</font><font #800000""><font color="#800000">.</font></font> Please contact <a href="mailto:support@ace-it.com">Support@ace-it.com</a>
                             if you have any questions.</b></font></p>
                             <%
     End Select
@@ -971,8 +971,8 @@ function FrontPage_Form2_Validator(theForm)
   oFormMailer.sHeader = "Form: ACE Member Signup - New Member ID=" & mrs("MemberIDPK")
   oFormMailer.sFooter = "Form mailer created by PUPPO ENGINEERING, 2001 - 2008"
 
-  oFormMailer.sFrom = "ACEMemberSignup@staging-portal.ace-it.com" '<--- no spaces
-  oFormMailer.sTo = "aceitweb@comcast.net" '"support@staging-portal.ace-it.com" '"bob@puppozone.com" '"bpuppo@voicenet.com"
+  oFormMailer.sFrom = "ACEMemberSignup@ace-it.com" '<--- no spaces
+  oFormMailer.sTo = "aceitweb@comcast.net" '"support@ace-it.com" '"bob@puppozone.com" '"bpuppo@voicenet.com"
   oFormMailer.sSubject = "ACE Member Signup"
   'oFormMailer.sImportance = 2 'high
 
@@ -985,7 +985,7 @@ function FrontPage_Form2_Validator(theForm)
 
   on error resume next
   
-  sendmail "ACEMemberSignup@staging-portal.ace-it.com", "aceitweb@comcast.net", "", "ACE Member Signup", _
+  sendmail "ACEMemberSignup@ace-it.com", "aceitweb@comcast.net", "", "ACE Member Signup", _
             oFormMailer.sHeader & VBCrLf & oFormMailer.sBody & VBCrLf & oFormMailer.sFooter, _
             "", "", "", "", "", "", ""
 
@@ -1001,7 +1001,7 @@ If False Then
   oFormMailer.sHeader = "ACE Member Signup"
   oFormMailer.sFooter = "Account Validator V1.01 created by PUPPO ENGINEERING www.PUPPOZone.com"
 
-  oFormMailer.sFrom = "ACEMemberSignup@staging-portal.ace-it.com" '<--- no spaces
+  oFormMailer.sFrom = "ACEMemberSignup@ace-it.com" '<--- no spaces
 '  oFormMailer.sTo = request.form("txtEmail")
   oFormMailer.sTo = "aceitweb@comcast.net" '"bob@puppozone.com"  '<---- Send to admin
   oFormMailer.sSubject = "ACE Member Signup"

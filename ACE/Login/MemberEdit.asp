@@ -303,7 +303,7 @@ function FrontPage_Form1_Validator(theForm)
   oFormMailer.sHeader = "Form: ACE Member Edit - Member ID=" & mUserID
   oFormMailer.sFooter = "Form mailer created by PUPPO ENGINEERING, 2001"
 
-  oFormMailer.sFrom = "ACEMemberSignup@staging-portal.ace-it.com" '<--- no spaces
+  oFormMailer.sFrom = "ACEMemberSignup@ace-it.com" '<--- no spaces
   oFormMailer.sTo = "aceitweb@comcast.net" '"bob@puppozone.com" '"bpuppo@voicenet.com"
   oFormMailer.sSubject = "ACE Member Edit"
   'oFormMailer.sImportance = 2 'high
@@ -322,7 +322,7 @@ function FrontPage_Form1_Validator(theForm)
 
 <hr>
 <p><font size="1" color="#666633">Unless otherwise noted all content �
-<a href="http://www.staging-portal.ace-it.com">AMERICAN COMPUTER ESTIMATING, INC.</a><br>
+<a href="http://www.ace-it.com">AMERICAN COMPUTER ESTIMATING, INC.</a><br>
 Website design, programs and web code � <a href="http://www.puppozone.com/">PUPPO 
 SOFTWARE SOLUTIONS, LLC.</a><br>
 All Rights Reserved. <br>

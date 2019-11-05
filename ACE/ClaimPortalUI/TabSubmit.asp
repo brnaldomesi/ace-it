@@ -1,4 +1,4 @@
-<% If mActiveTab = "" Then response.redirect "http://www.staging-portal.ace-it.com/" %> 
+<% If mActiveTab = "" Then response.redirect "http://www.ace-it.com/" %> 
 <script>
   //var windowOpt = 'dependent,scrollbars=yes,location=no,directories=no,status=yes,menubar=yes,toolbar=yes,resizable=yes,screenX=0,screenY=0,width=500,height=' + (screen.availHeight - 60);
   //this script is now in the sidebar

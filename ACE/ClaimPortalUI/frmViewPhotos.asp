@@ -102,7 +102,7 @@
 
 <hr>
 <p><font size="1" color="#666633">Unless otherwise noted all content �
-<a href="http://www.staging-portal.ace-it.com">AMERICAN COMPUTER ESTIMATING, INC.</a><br>
+<a href="http://www.ace-it.com">AMERICAN COMPUTER ESTIMATING, INC.</a><br>
 Website design, programs and web code � <a href="http://www.puppozone.com/">PUPPO 
 SOFTWARE SOLUTIONS, LLC.</a><br>
 All Rights Reserved. <br>
