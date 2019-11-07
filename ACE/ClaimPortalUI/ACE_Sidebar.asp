@@ -125,11 +125,11 @@ function OpenTutorial(sDoc) {
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
       <td width="100%">
-      <p style="margin-top: 0; margin-bottom: 0"><font color="#808080" size="1" face="Arial">Unless otherwise noted all content Copyright� American Computer Estimating, Inc.
+      <p style="margin-top: 0; margin-bottom: 0"><font color="#808080" size="1" face="Arial">Unless otherwise noted all content Copyright© American Computer Estimating, Inc.
         </font>
       <font face="Arial" size="-2"><a target="_top" href="../ACE-IT_sv/companyinfo.html">Contact Us</a></font><font color="#808080" size="1" face="Arial"><br>
       <br>
-        Web Site design, programs and web code Copyright � <a href="http://www.puppozone.com/">PUPPO SOFTWARE SOLUTIONS, LLC.</a>&nbsp;&nbsp; All Rights Reserved.<br>
+        Web Site design, programs and web code Copyright © <a href="http://www.puppozone.com/">PUPPO SOFTWARE SOLUTIONS, LLC.</a>&nbsp;&nbsp; All Rights Reserved.<br>
       <br>
         Send mail to <br>
       <a href="mailto:support@staging-portal.ace-it.com?subject=Regarding the ACE-IT Website">support@staging-portal.ace-it.com</a> with questions or comments about this site.</font></tr>
