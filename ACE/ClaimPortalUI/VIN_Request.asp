@@ -7,7 +7,7 @@
   v = Request.QueryString("vin") 
 
   With r
-      .open "GET", "https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/" & vin & "?format=json", False
+      .open "GET", "https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/" & v & "?format=json", False
       .send
       j = .ResponseText
   End With
