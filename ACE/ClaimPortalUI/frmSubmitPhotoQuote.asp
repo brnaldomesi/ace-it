@@ -237,7 +237,7 @@
 </head>
 
 <body ng-app>
-
+<!--METADATA TYPE="typelib" UUID="00000205-0000-0010-8000-00AA006D2EA4" NAME="ADODB Type Library" -->
 
 	<%
 '--------------------------------------------

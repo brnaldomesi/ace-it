@@ -162,7 +162,9 @@ function hideRequired(sID, bHide) {
 <meta name="Microsoft Border" content="t">
 </head>
 
-<body ng-app><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
+<body ng-app>
+<!--METADATA TYPE="typelib" UUID="00000205-0000-0010-8000-00AA006D2EA4" NAME="ADODB Type Library" -->
+<!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td>
 
 <p align="center"><a href="../ACE-IT/index.htm"><img border="0" src="../Images/ace_logo.gif" width="149" height="71"></a><br>
 <img border="0" src="../Images/LineGradBlue.jpg" width="422" height="11"><br>

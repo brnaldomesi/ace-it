@@ -4,7 +4,7 @@
 				<h3 style="padding:3px;background-color:#eee;font-family:arial,helvetica,sans-serif;font-weight:bold;color:black">ACE News Flash</h3>
 				<ul runat="server">
                     <%  try {
-                            using (SqlConnection connection = new SqlConnection("Data Source=sql.staging-portal.ace-it.com;Initial Catalog=ACE_WEB_Portal;Persist Security Info=True;User ID=anthony;Password=iPhone4s4me;Encrypt=true;TrustServerCertificate=true;Connection Timeout=2")) {
+                            using (SqlConnection connection = new SqlConnection("Data Source=sql.ace-it.com;Initial Catalog=ACE_WEB_Portal;Persist Security Info=True;User ID=anthony;Password=iPhone4s4me;Encrypt=true;TrustServerCertificate=true;Connection Timeout=2")) {
                                 if (!QuickOpen(connection, 2000)) {
                                     Response.Write("Could not retrieve news feed.");
 
