@@ -43,6 +43,9 @@
 
 
 <BODY onLoad="msg()">
+<!--METADATA TYPE="TypeLib" 
+uuid={00000200-0000-0010-8000-00AA006D2EA4} 
+-->
 <TABLE BORDER=1 ID=tblFileData BACKGROUND="">
 	<TR>
 		<TD CLASS=TabHeader><A HREF="frmRetrieveFileAttachments.asp?sort=Name">File Name</A></TD>
